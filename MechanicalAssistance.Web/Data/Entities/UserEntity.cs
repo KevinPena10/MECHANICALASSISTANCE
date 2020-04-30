@@ -33,7 +33,7 @@ namespace MechanicalAssistance.Web.Data.Entities
 
         public ICollection<MechanicalServiceEntity> Services { get; set; }
 
-        public ICollection<RequestServiceEntity> requestServices { get; set; }
+        public ICollection<RequestServiceEntity> RequestServices { get; set; }
 
         [Display(Name = "Full User Name")]
         public string FullName => $"{FirstName} {LastName}";

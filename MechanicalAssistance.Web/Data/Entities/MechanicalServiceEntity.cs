@@ -31,7 +31,7 @@ namespace MechanicalAssistance.Web.Data.Entities
 
         public ICollection<ProductEntity> Products { get; set; }
 
-        public ICollection<RequestServiceEntity> requestServices { get; set; }
+        public ICollection<RequestServiceEntity> RequestServices { get; set; }
 
     }
 }
