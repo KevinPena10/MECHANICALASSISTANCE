@@ -9,8 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
 namespace MechanicalAssistance.Web
 {
@@ -33,6 +31,13 @@ namespace MechanicalAssistance.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Account/NotAuthorized";
+                options.AccessDeniedPath = "/Account/NotAuthorized";
+            });
+
+
             services.AddIdentity<UserEntity, IdentityRole>(cfg =>
             {
                 cfg.Tokens.AuthenticatorTokenProvider = TokenOptions.DefaultAuthenticatorProvider;
@@ -45,18 +50,6 @@ namespace MechanicalAssistance.Web
             })
                 .AddDefaultTokenProviders()
                .AddEntityFrameworkStores<DataContext>();
-
-            services.AddAuthentication()
-          .AddCookie()
-          .AddJwtBearer(cfg =>
-          {
-              cfg.TokenValidationParameters = new TokenValidationParameters
-              {
-                  ValidIssuer = Configuration["Tokens:Issuer"],
-                  ValidAudience = Configuration["Tokens:Audience"],
-                  IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Tokens:Key"]))
-              };
-          });
 
             services.AddDbContext<DataContext>(cfg =>
             {
@@ -81,9 +74,11 @@ namespace MechanicalAssistance.Web
                 app.UseHsts();
             }
 
+            app.UseStatusCodePagesWithReExecute("/error/{0}");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

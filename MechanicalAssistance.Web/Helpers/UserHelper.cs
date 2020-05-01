@@ -1,5 +1,6 @@
 ﻿using MechanicalAssistance.Web.Data;
 using MechanicalAssistance.Web.Data.Entities;
+using MechanicalAssistance.Web.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -62,6 +63,25 @@ namespace MechanicalAssistance.Web.Helpers
         public async Task<IdentityResult> AddUserAsync(UserEntity user, string password)
         {
             return await _userManager.CreateAsync(user, password);
+        }
+
+        public async Task<bool> IsUserInRoleAsync(UserEntity user, string roleName)
+        {
+            return await _userManager.IsInRoleAsync(user, roleName);
+        }
+
+        public async Task<SignInResult> LoginAsync(LoginViewModel model)
+        {
+            return await _signInManager.PasswordSignInAsync(
+                 model.Username,
+                 model.Password,
+                 model.RememberMe,
+                 false);
+        }
+
+        public async Task LogoutAsync()
+        {
+            await _signInManager.SignOutAsync();
         }
     }
 }

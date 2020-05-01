@@ -1,5 +1,6 @@
 ﻿using MechanicalAssistance.Web.Data;
 using MechanicalAssistance.Web.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace MechanicalAssistance.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductBrandsController : Controller
     {
         private readonly DataContext _context;
