@@ -8,5 +8,9 @@ namespace MechanicalAssistance.Web.Helpers
     {
         Task<ProductEntity>ToProductEntityAsync(ProductViewModel model, string path, bool isNew);
         ProductViewModel ToProductViewModel(ProductEntity productEntity);
+
+
+        MechanicalServiceEntity ToServiceEntity(ServiceViewModel model, string path, bool isNew);
+        ServiceViewModel ToServiceViewModel(MechanicalServiceEntity serviceEntity);
     }
 }

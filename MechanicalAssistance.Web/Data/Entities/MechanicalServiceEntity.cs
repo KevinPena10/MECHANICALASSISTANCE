@@ -13,12 +13,18 @@ namespace MechanicalAssistance.Web.Data.Entities
 
         [MaxLength(50, ErrorMessage = "The field {0} can not have more than {1} characters.")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
-        [Display(Name = "Service Name")]
+        [Display(Name = "Name")]
         public string ServiceName { get; set; }
+
+        [MaxLength(100, ErrorMessage = "The field {0} can not have more than {1} characters.")]
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Display(Name = "Service description")]
+        public string Description { get; set; }
 
         [DataType(DataType.DateTime)]
         [Display(Name = "Publication Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
+        
         public DateTime Date { get; set; }
 
         [MaxLength(500, ErrorMessage = "The {0} field can not have more than {1} characters.")]

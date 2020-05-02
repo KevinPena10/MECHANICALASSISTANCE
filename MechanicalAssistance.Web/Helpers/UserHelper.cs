@@ -48,6 +48,7 @@ namespace MechanicalAssistance.Web.Helpers
             return await _context.Users.FirstOrDefaultAsync(u => u.Id == userId.ToString());
         }
 
+
         public async Task<UserEntity> GetUserByEmailAsync(string email)
         {
             return await _userManager.FindByEmailAsync(email);

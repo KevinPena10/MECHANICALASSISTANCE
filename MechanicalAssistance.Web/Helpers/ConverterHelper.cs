@@ -10,7 +10,6 @@ namespace MechanicalAssistance.Web.Helpers
 
         private readonly DataContext _context;
         private readonly ICombosHelper _combosHelper;
-
         public ConverterHelper(ICombosHelper combosHelper,
           DataContext context)
         { 
@@ -44,6 +43,34 @@ namespace MechanicalAssistance.Web.Helpers
                 ProductBrandId = productEntity.ProductBrand.Id,
                 ProductBrands = _combosHelper.GetComboProductsBrand()
 
+            };
+        }
+
+        public MechanicalServiceEntity ToServiceEntity(ServiceViewModel model, string path, bool isNew)
+        {
+            return new MechanicalServiceEntity
+            {
+                Id = isNew ? 0 : model.Id,
+                ServiceName = model.ServiceName,
+                Description = model.Description,
+                Date = model.Date,
+                Address = model.Address,
+                LogoPath = path,
+                User = model.User
+
+            };
+        }
+
+        public ServiceViewModel ToServiceViewModel(MechanicalServiceEntity serviceEntity)
+        {
+            return new ServiceViewModel
+            {
+                Id = serviceEntity.Id,
+                ServiceName = serviceEntity.ServiceName,
+                Description = serviceEntity.Description,
+                Date = serviceEntity.Date,
+                Address = serviceEntity.Address,
+                LogoPath = serviceEntity.LogoPath
             };
         }
     }
