@@ -36,8 +36,14 @@
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <li><a asp-area="" asp-controller="ProductBrands" asp-action="Index">ProductBrand</a></li>
+
                     }
-                </ul>
+
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Mechanic")))
+                    {
+                        <li><a asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
+                    }
+                    </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)
                     {

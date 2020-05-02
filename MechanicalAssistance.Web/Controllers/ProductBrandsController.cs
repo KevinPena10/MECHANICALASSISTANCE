@@ -133,7 +133,6 @@ namespace MechanicalAssistance.Web.Controllers
         }
 
 
-        // GET: Cities/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

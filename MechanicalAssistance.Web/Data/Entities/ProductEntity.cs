@@ -13,7 +13,7 @@ namespace MechanicalAssistance.Web.Data.Entities
 
         [MaxLength(50, ErrorMessage = "The field {0} can not have more than {1} characters.")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
-        [Display(Name = "Product's name")]
+        [Display(Name = "Product name")]
         public string ProductName { get; set; }
 
         [MaxLength(50, ErrorMessage = "The field {0} can not have more than {1} characters.")]
@@ -21,11 +21,12 @@ namespace MechanicalAssistance.Web.Data.Entities
         [Display(Name = "Service description")]
         public string Description { get; set; }
 
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
         [DisplayFormat(DataFormatString = "{0:C0}", ApplyFormatInEditMode = false)]
         [Display(Name = "Price of the product")]
         public double Price { get; set; }
 
-        [Display(Name = "Picture")]
+        [Display(Name = "Product Photo")]
         public string Photo { get; set; }
 
         public MechanicalServiceEntity Service { get; set; }

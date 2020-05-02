@@ -1,0 +1,41 @@
+﻿@model MechanicalAssistance.Web.Models.ProductViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit - Product</h2>
+<hr />
+<div class="row">
+        
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="Photo" />
+
+                <partial name="_Product" />
+
+                <div class="form-group">
+                    <div style="text-align:end">
+                        <button type="submit" value="save" class="btn btn-success"> Save <i class="glyphicon glyphicon-save"></i></button>
+                    </div>
+                    <div style="text-align:start">
+                        <a asp-action="index"><i class="glyphicon glyphicon-arrow-left"></i> Back to List</a>
+                    </div>
+                </div>
+
+             </form>
+        </div>
+        <div class="col-md-4">
+            @if (!string.IsNullOrEmpty(Model.Photo))
+            {
+                <img src="@Url.Content(Model.Photo)" alt="Image" style="width:200px;height:200px;max-width: 200%; height: auto;" />
+            }
+        </div>
+
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

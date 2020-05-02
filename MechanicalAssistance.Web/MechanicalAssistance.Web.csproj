@@ -14,4 +14,8 @@
     <ProjectReference Include="..\MechanicalAssistance.Common\MechanicalAssistance.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\Products\" />
+  </ItemGroup>
+
 </Project>
