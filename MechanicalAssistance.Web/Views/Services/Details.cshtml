@@ -1,42 +1,109 @@
-﻿@model MechanicalAssistance.Web.Data.Entities.MechanicalServiceEntity
+﻿
+@model MechanicalAssistance.Web.Data.Entities.MechanicalServiceEntity
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Index";
 }
 
-<h2>Details</h2>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<br />
 
-<div>
-    <h4>MechanicalServiceEntity</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ServiceName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ServiceName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.LogoPath)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.LogoPath)
-        </dd>
-    </dl>
+<p>
+   
+ <a asp-action="CreateProduct" asp-route-id="@Model.Id" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Create New Product</a>
+      
+</p>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="background-color:dodgerblue; text-align:center; font-weight: bold; color:black; border-color:black;">
+                <h3 class="panel-title">Products</h3>
+ 
+            </div>
+            <div class="panel-body">
+                
+                <table class="table table-hover table-responsive table-striped" style="background-color:dodgerblue; text-align:center; font-weight: bold; color:black; border-color:black;" id="MyTable">
+                    <thead>
+                        <tr>
+                            <td>
+                                <center>Photo</center>
+                            </td>
+                            <th>
+                                <center>Product Name</center>
+                            </th>
+
+                            <th>
+                                <center>Brand Name</center>
+                            </th>
+
+                            <td>
+                                <center>Description</center>
+                            </td>
+                            <td>
+                                <center>Price</center>
+                            </td>
+
+                            <th> <center><label>Actions</label></center></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Products)
+                        {
+                            <tr>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(item.Photo))
+                                    {
+                                        <img src="@Url.Content(item.Photo)" alt="Image" style="width:180px;height:180px;max-width: 180%; height: auto;" />
+                                    }
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductName)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductBrand.BrandName)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+
+                                <td>
+                                    <a asp-action="EditProduct" asp-route-id="@item.Id" class="btn btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
+                                    <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="glyphicon glyphicon-trash"></i></button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a asp-action="index"><i class="glyphicon glyphicon-arrow-left"></i> Back to List</a>
+    </div>
+
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+<partial name="_DeleteDialog" />
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#MyTable').DataTable();
+            // Delete item
+            var item_to_delete;
+            $('.deleteItem').click((e) => {
+                item_to_delete = e.currentTarget.dataset.id;
+            });
+            $("#btnYesDelete").click(function () {
+                window.location.href = '/Products/Delete/' + item_to_delete;
+            });
+        });
+    </script>
+}

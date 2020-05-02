@@ -18,7 +18,7 @@ namespace MechanicalAssistance.Web.Data.Entities
 
         [MaxLength(50, ErrorMessage = "The field {0} can not have more than {1} characters.")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
-        [Display(Name = "Service description")]
+        [Display(Name = "Description")]
         public string Description { get; set; }
 
         [Required(ErrorMessage = "The field {0} is mandatory.")]

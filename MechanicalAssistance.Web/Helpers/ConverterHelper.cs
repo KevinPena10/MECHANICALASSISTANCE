@@ -26,7 +26,8 @@ namespace MechanicalAssistance.Web.Helpers
                 Description = model.Description,
                 Price = model.Price,
                 Photo = path,
-                ProductBrand = await _context.ProductBrands.FindAsync(model.ProductBrandId)
+                ProductBrand = await _context.ProductBrands.FindAsync(model.ProductBrandId),
+                Service = await _context.Services.FindAsync(model.ServiceId)
 
             };
         }
@@ -41,7 +42,8 @@ namespace MechanicalAssistance.Web.Helpers
                 Price = productEntity.Price,
                 Photo = productEntity.Photo,
                 ProductBrandId = productEntity.ProductBrand.Id,
-                ProductBrands = _combosHelper.GetComboProductsBrand()
+                ProductBrands = _combosHelper.GetComboProductsBrand(),
+                ServiceId = productEntity.Service.Id
 
             };
         }

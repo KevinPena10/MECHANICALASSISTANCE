@@ -33,18 +33,18 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Mechanic")))
+                    {
+                        <li><a asp-area="" asp-controller="Services" asp-action="Index">Mechanic Services</a></li>
+
+                    }
+
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
                         <li><a asp-area="" asp-controller="ProductBrands" asp-action="Index">ProductBrand</a></li>
 
                     }
 
-                    @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("Mechanic")))
-                    {
-                        <li><a asp-area="" asp-controller="Services" asp-action="Index">Mechanic Services</a></li>
-                        <li><a asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
-
-                    }
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)

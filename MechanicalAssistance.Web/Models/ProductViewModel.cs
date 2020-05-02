@@ -17,5 +17,8 @@ namespace MechanicalAssistance.Web.Models
         public int ProductBrandId { get; set; }
 
         public IEnumerable<SelectListItem> ProductBrands { get; set; }
+
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        public int ServiceId { get; set; }
     }
 }

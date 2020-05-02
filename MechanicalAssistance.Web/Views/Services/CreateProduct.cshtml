@@ -1,0 +1,23 @@
+﻿@model MechanicalAssistance.Web.Models.ProductViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create - Product</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateProduct" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ServiceId" />
+            <partial name="_Product" />
+
+            <div class="form-group" style="text-align:end">
+                <button type="submit" value="CreateProduct" class="btn btn-success"> Create <i class="glyphicon glyphicon-save"></i></button>
+            </div>
+            <a asp-action="Details/@Model.ServiceId"><i class="glyphicon glyphicon-arrow-left"></i> Back to List</a>
+        </form>
+    </div>
+</div>
