@@ -2,6 +2,7 @@
 using MechanicalAssistance.Web.Data.Entities;
 using MechanicalAssistance.Web.Helpers;
 using MechanicalAssistance.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace MechanicalAssistance.Web.Controllers
 {
+  
     public class ServicesController : Controller
     {
         private readonly DataContext _context;

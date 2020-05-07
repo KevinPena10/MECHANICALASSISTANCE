@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
+using Syncfusion.SfBusyIndicator.XForms.Droid;
 
 namespace MechanicalAssistance.Prism.Droid
 {
@@ -17,6 +18,7 @@ namespace MechanicalAssistance.Prism.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            new SfBusyIndicatorRenderer();
             LoadApplication(new App(new AndroidInitializer()));
         }
     }

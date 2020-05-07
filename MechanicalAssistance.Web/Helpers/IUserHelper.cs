@@ -21,5 +21,14 @@ namespace MechanicalAssistance.Web.Helpers
         Task<SignInResult> LoginAsync(LoginViewModel model);
         Task LogoutAsync();
 
+        Task<string> GenerateEmailConfirmationTokenAsync(UserEntity user);
+
+        Task<IdentityResult> UpdateUserAsync(UserEntity user);
+
+        Task<string> GeneratePasswordResetTokenAsync(UserEntity user);
+        Task<IdentityResult> ChangePasswordAsync(UserEntity user, string oldPassword, string newPassword);
+        Task<IdentityResult> ConfirmEmailAsync(UserEntity user, string token);
+        Task<SignInResult> ValidatePasswordAsync(UserEntity user, string password);
+        Task<IdentityResult> ResetPasswordAsync(UserEntity user, string token, string password);
     }
 }
