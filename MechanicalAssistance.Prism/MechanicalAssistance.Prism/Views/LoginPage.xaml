@@ -5,45 +5,57 @@
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms" 
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers"
+             xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              x:Class="MechanicalAssistance.Prism.Views.LoginPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             BackgroundColor="SlateGray">
 
     <AbsoluteLayout>
         <StackLayout  AbsoluteLayout.LayoutBounds="0,0,1,1"
                 AbsoluteLayout.LayoutFlags="All"
                 Padding="10">
-            <Image WidthRequest ="270" Source="travelImage" />
-            <FlexLayout FlexLayout.Grow="0" JustifyContent="Start">
-                <Label Text="   "/>
-                <Image Source="UserEmail" />
-                <Label Text="   "/>
-                <Entry
-                     Keyboard="Email"
-                     FontAttributes="Italic"
-                      WidthRequest="300"  
-                     Placeholder="{i18n:Translate Email}"
-                     Text="{Binding Email}" ></Entry>
-            </FlexLayout>
+            <Image WidthRequest ="350" Source="mechanicalImage" />
 
-            <FlexLayout >
-                <Label Text="   "/>
-                <Image Source="Key" />
-                <Label Text="   "/>
-                <Entry 
-                     IsPassword="True"
-                     FontAttributes="Italic"
-                     Placeholder="{i18n:Translate Password}"
-                     WidthRequest="300"
-                     Text="{Binding Password}"></Entry>
+            <StackLayout Padding="20">
+                <inputLayout:SfTextInputLayout
+                   Hint="{i18n:Translate Email}"
+                    ContainerType="Filled"
+                    ContainerBackgroundColor="White"
+                  LeadingViewPosition="Inside" >
+                    <Entry Text="{Binding Email}"
+                           Keyboard="Email"
+                           FontAttributes="Italic"
+                           WidthRequest="30">
+                    </Entry>
+                    <inputLayout:SfTextInputLayout.LeadingView>
+                        <Image Source="UserEmail" />
+                    </inputLayout:SfTextInputLayout.LeadingView>
+                </inputLayout:SfTextInputLayout>
 
-            </FlexLayout>
+                <inputLayout:SfTextInputLayout
+                   Hint="{i18n:Translate Password}"
+                    EnablePasswordVisibilityToggle="True"
+                     ContainerType="Filled"
+                    ContainerBackgroundColor="White"
+                  LeadingViewPosition="Inside" >
+                    <Entry Text="{Binding Password}"
+                           IsPassword="True"
+                           FontAttributes="Italic"
+                           WidthRequest="30">
+                    </Entry>
+                    <inputLayout:SfTextInputLayout.LeadingView>
+                        <Image Source="Key" />
+                    </inputLayout:SfTextInputLayout.LeadingView>
+                </inputLayout:SfTextInputLayout>
+            </StackLayout>
+
 
             <StackLayout Padding="10" HorizontalOptions="EndAndExpand">
                 <Label FontAttributes="Bold"
                             HorizontalOptions="Center" 
                              Text="{i18n:Translate forgotPassword}"
-                               TextColor="#2893e1">
+                               TextColor=" #76c5f0 ">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
                     </Label.GestureRecognizers>
@@ -72,17 +84,18 @@
                             HorizontalOptions="Center" 
                              Text="{i18n:Translate Register}"
                                 FontSize="Subtitle"
-                               TextColor="#2893e1">
+                               TextColor="#76c5f0 ">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
                         </Label.GestureRecognizers>
                     </Label>
+                    
                 </StackLayout>
+                
             </StackLayout>
+            
         </StackLayout>
-
-
-        <busyindicator:SfBusyIndicator AnimationType="Box" 
+        <busyindicator:SfBusyIndicator AnimationType="Gear" 
                                        AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
                 	                   AbsoluteLayout.LayoutFlags="All"
                 	                   HorizontalOptions="Center"
@@ -93,5 +106,6 @@
                 	                   ViewBoxWidth="100"
                 	                   ViewBoxHeight="100" />
     </AbsoluteLayout>
+    
 
 </ContentPage>

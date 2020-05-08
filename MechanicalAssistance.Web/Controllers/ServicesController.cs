@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MechanicalAssistance.Web.Controllers
 {
-  
+    [Authorize(Roles = "Admin,Mechanic")]
     public class ServicesController : Controller
     {
         private readonly DataContext _context;
