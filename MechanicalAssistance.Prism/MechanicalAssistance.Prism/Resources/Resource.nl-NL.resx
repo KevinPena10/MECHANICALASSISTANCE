@@ -300,4 +300,7 @@
   <data name="Mechanic" xml:space="preserve">
     <value>Monteur</value>
   </data>
+  <data name="LoginMenu" xml:space="preserve">
+    <value>Aanmelden</value>
+  </data>
 </root>

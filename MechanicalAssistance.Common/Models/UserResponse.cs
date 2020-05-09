@@ -15,8 +15,6 @@ namespace MechanicalAssistance.Common.Models
         public UserType UserType { get; set; }
         public string FullName => $"{FirstName} {LastName}";
         public string FullNameWithDocument => $"{FirstName} {LastName} - {Document}";
-        public string PictureFullPath => string.IsNullOrEmpty(PicturePath)
-            ? "https://mechanicalassistanceweb.azurewebsites.net/images/noimage.png"
-            : $"https://mechanicalassistanceweb.azurewebsites.net{PicturePath.Substring(1)}";
+        public string PictureFullPath => string.IsNullOrEmpty(PicturePath) ? "https://mechanicalassistanceweb.azurewebsites.net/images/noimage.png" : $"https://mechanicalassistanceweb.azurewebsites.net{PicturePath.Substring(1)}";
     }
 }

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="http://prismlibrary.com" 
+                  xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+                  xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="MechanicalAssistance.Prism.Views.MechanicMasterDetailPage"
+                 >
+
+    <MasterDetailPage.Master >
+        <ContentPage Title="Menu" BackgroundColor="#76c5f0" >
+            <StackLayout Padding="25" >
+                <StackLayout>
+
+                    <ffimageloading:CachedImage x:Name="PictureTwo" 
+                                                Aspect="AspectFill"
+                                                Source="{Binding menuImage}" 
+                                                CacheDuration= "50"
+                                                IsVisible="{Binding IsEnabledTwo}"
+                                                HeightRequest="180"
+                                                WidthRequest="0">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:FlipTransformation/>
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+                    
+                    <ffimageloading:CachedImage x:Name="Picture" 
+                                                Aspect="AspectFit"
+                                                Source="{Binding User.PictureFullPath}" 
+                                                IsVisible="{Binding IsEnabled}"
+                                                CacheDuration= "50"
+                                                HeightRequest="180"
+                                                WidthRequest="0">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation/>
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+                    <Label FontAttributes="Bold"
+                          
+                           HorizontalTextAlignment="Center"
+                           FontSize="Title"
+                           FontFamily="sans-serif-condensed"
+                           IsVisible="{Binding IsEnabled}"
+                           Text="{Binding User.FullName}"
+                           TextColor="Black"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ModifyUserCommand}"/>
+                    </StackLayout.GestureRecognizers>
+
+                    
+                </StackLayout>
+                <StackLayout Padding="15"></StackLayout>
+     
+                <StackLayout >
+                    <ListView BackgroundColor="Transparent"
+                	      ItemsSource="{Binding Menus}"
+                	      HasUnevenRows="True"
+                	      SeparatorVisibility="None"
+                          Margin="7">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                         
+                            <ViewCell >
+                                    <Grid >
+                                        <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectMenuCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0"
+                                    	   HeightRequest="40"
+                                           Margin="9"
+                                    	   Source="{Binding Icon}"
+                                    	   WidthRequest="50"/>
+                                    <Label Grid.Column="1"
+                                           FontSize="Medium"
+                                           FontAttributes="Bold"
+                                            FontFamily="sans-serif-condensed"
+                                   	       VerticalOptions="Center"
+                                   	       TextColor="Black"
+                                   	       Text="{Binding Title}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid>
+                    <Image  HeightRequest="300"  
+                            IsVisible="{Binding IsEnabled}"
+                       Source="mechanicalImage.png"/>
+                    </Grid>
+                </StackLayout>
+
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+</MasterDetailPage>

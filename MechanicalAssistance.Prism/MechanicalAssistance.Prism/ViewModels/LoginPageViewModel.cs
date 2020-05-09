@@ -133,8 +133,8 @@ namespace MechanicalAssistance.Prism.ViewModels
             IsRunning = false;
             IsEnabled = true;
 
-            //await _navigationService.NavigateAsync("/TravelMasterDetailPage/NavigationPage/TravelTabbedPage", parameter);
-            await App.Current.MainPage.DisplayAlert(Languages.Error, "todo melo", Languages.Accept);
+            await _navigationService.NavigateAsync("/MechanicMasterDetailPage/NavigationPage/ServicePage", parameter);
+     
             Password = string.Empty;
         }
 

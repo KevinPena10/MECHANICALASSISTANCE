@@ -54,6 +54,8 @@ namespace MechanicalAssistance.Prism.Helpers
         public static string ModifyMenu => Resource.ModifyMenu;
         public static string LogoutMenu => Resource.LogoutMenu;
 
+        public static string LoginMenu => Resource.LoginMenu;
+
         public static string UserUpdated => Resource.UserUpdated;
 
        // public static string btnChangePassword => Resource.btnChangePassword;

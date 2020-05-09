@@ -23,7 +23,7 @@ namespace MechanicalAssistance.Prism
 
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/LoginPage");
+            await NavigationService.NavigateAsync("/MechanicMasterDetailPage/NavigationPage/ServicePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -35,6 +35,8 @@ namespace MechanicalAssistance.Prism
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
             containerRegistry.RegisterForNavigation<RememberPasswordPage, RememberPasswordPageViewModel>();
+            containerRegistry.RegisterForNavigation<MechanicMasterDetailPage, MechanicMasterDetailPageViewModel > ();
+            containerRegistry.RegisterForNavigation<ServicePage, ServicePageViewModel>();
         }
     }
 }
