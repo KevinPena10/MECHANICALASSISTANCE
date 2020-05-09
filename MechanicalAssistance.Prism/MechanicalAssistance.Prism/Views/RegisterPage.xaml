@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             x:Class="MechanicalAssistance.Prism.Views.RegisterPage"
+             BackgroundColor="SlateGray"
+             Title="{Binding Title}">
+
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All"
+                     Padding="5">
+            <ScrollView>
+                <StackLayout Padding="11">
+                    <ffimageloading:CachedImage Aspect="AspectFit"
+                                                Source="{Binding Image}" 
+                                                CacheDuration= "50"
+                                                HeightRequest="150"
+                                                Margin="5"
+                                                RetryCount= "3"
+                                                RetryDelay= "600">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation/>
+                        </ffimageloading:CachedImage.Transformations>
+
+                        <ffimageloading:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeImageCommand}"/>
+                        </ffimageloading:CachedImage.GestureRecognizers>
+
+                    </ffimageloading:CachedImage>
+                    <StackLayout Padding="10">
+
+                        <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate labelDocument}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                            <Entry Grid.Row="0"
+                         Grid.Column="1"
+                          Keyboard="Numeric"
+                          Placeholder="{i18n:Translate DocumentPlaceHolder}"
+                          Text="{Binding User.Document}"/>
+                            <inputLayout:SfTextInputLayout.LeadingView>
+                                <Image Source="edit" />
+                            </inputLayout:SfTextInputLayout.LeadingView>
+                        </inputLayout:SfTextInputLayout>
+
+
+                        <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate labelFirstName}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                            <Entry Grid.Row="1"
+                         Grid.Column="1"
+                          Keyboard="Text"
+                          Placeholder="{i18n:Translate NamePlaceHolder}"
+                          Text="{Binding User.FirstName}"/>
+                            <inputLayout:SfTextInputLayout.LeadingView>
+                                <Image Source="edit" />
+                            </inputLayout:SfTextInputLayout.LeadingView>
+                        </inputLayout:SfTextInputLayout>
+
+
+                        <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate labelLastName}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                            <Entry Grid.Row="2"
+                         Grid.Column="1"
+                          Keyboard="Text"
+                          Placeholder="{i18n:Translate LastNamePlaceHolder}"
+                          Text="{Binding User.LastName}"/>
+                            <inputLayout:SfTextInputLayout.LeadingView>
+                                <Image Source="edit" />
+                            </inputLayout:SfTextInputLayout.LeadingView>
+                        </inputLayout:SfTextInputLayout>
+
+
+                        <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate labelAddress}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                            <Entry Grid.Row="3"
+                         Grid.Column="1"
+                          Keyboard="Text"
+                          Placeholder="{i18n:Translate AddressPlaceHolder}"
+                          Text="{Binding User.Address}"/>
+                            <inputLayout:SfTextInputLayout.LeadingView>
+                                <Image Source="edit" />
+                            </inputLayout:SfTextInputLayout.LeadingView>
+                        </inputLayout:SfTextInputLayout>
+
+                        <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate Email}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                            <Entry Grid.Row="4"
+                         Grid.Column="1"
+                          Keyboard="Email"
+                          Placeholder="{i18n:Translate EmailPlaceHolder}"
+                          Text="{Binding User.Email}"/>
+                            <inputLayout:SfTextInputLayout.LeadingView>
+                                <Image Source="UserEmail" />
+                            </inputLayout:SfTextInputLayout.LeadingView>
+                        </inputLayout:SfTextInputLayout>
+
+
+                        <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate labelPhone}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                            <Entry Grid.Row="5"
+                         Grid.Column="1"
+                           Keyboard="Telephone"
+                          Placeholder="{i18n:Translate PhonePlaceHolder}"
+                          Text="{Binding User.Phone}"/>
+                            <inputLayout:SfTextInputLayout.LeadingView>
+                                <Image Source="phone" />
+                            </inputLayout:SfTextInputLayout.LeadingView>
+                        </inputLayout:SfTextInputLayout>
+
+                        <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate Password}"
+                         EnablePasswordVisibilityToggle="True"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                            <Entry Grid.Row="6"
+                        Grid.Column="1"
+                        IsPassword="True"
+                        Placeholder="{i18n:Translate PasswordPlaceHolder}"
+                        Text="{Binding User.Password}"/>
+                            <inputLayout:SfTextInputLayout.LeadingView>
+                                <Image Source="lock" />
+                            </inputLayout:SfTextInputLayout.LeadingView>
+                        </inputLayout:SfTextInputLayout>
+
+
+                        <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate labelConfirmPassword}"
+                         EnablePasswordVisibilityToggle="True"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                            <Entry Grid.Row="6"
+                        Grid.Column="1"
+                        IsPassword="True"
+                        Placeholder="{i18n:Translate PasswordConfirmPlaceHolder}"
+                        Text="{Binding User.PassConfirm}"/>
+                            <inputLayout:SfTextInputLayout.LeadingView>
+                                <Image Source="lock" />
+                            </inputLayout:SfTextInputLayout.LeadingView>
+                        </inputLayout:SfTextInputLayout>
+
+                        <inputLayout:SfTextInputLayout 
+                               Hint="{i18n:Translate RegisterAsPlaceHolder}"
+                                ContainerType="Filled"
+                                ContainerBackgroundColor="White">
+                            <Picker Grid.Row="7"
+                                Grid.Column="1"
+                                ItemDisplayBinding="{Binding Name}"
+                                ItemsSource="{Binding Roles}"
+                                SelectedItem="{Binding Role}">
+                            </Picker>
+                        </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout  Padding="15">
+                <buttons:SfButton x:Name="SfButton"  Command="{Binding RegisterCommand}" 
+                         CornerRadius="20" IsEnabled="{Binding IsEnabled}" 
+                           BackgroundColor="White"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           HeightRequest="50"               
+                           HorizontalTextAlignment="Center"
+                           BorderColor="Black"
+                           Text="{i18n:Translate TitleRegister}"
+                           ImageSource="register.png" 
+                           ShowIcon="True"           
+                           ImageAlignment="End" />
+            </StackLayout>
+        </StackLayout>
+
+        <busyindicator:SfBusyIndicator AnimationType="Gear" 
+                                       AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"
+                                       IsVisible="{Binding IsRunning}"
+                                       Title="{i18n:Translate Loading}"
+                                       VerticalOptions="Center"
+                                       ViewBoxWidth="80"
+                                       ViewBoxHeight="80" />
+    </AbsoluteLayout>
+
+</ContentPage>

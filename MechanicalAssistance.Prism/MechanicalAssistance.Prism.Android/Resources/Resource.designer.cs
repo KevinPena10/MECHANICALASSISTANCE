@@ -11499,25 +11499,28 @@ namespace MechanicalAssistance.Prism.Droid
 			public const int price = 2131165555;
 			
 			// aapt resource value: 0x7F070174
-			public const int recovery = 2131165556;
+			public const int r = 2131165556;
 			
 			// aapt resource value: 0x7F070175
-			public const int register = 2131165557;
+			public const int recovery = 2131165557;
 			
 			// aapt resource value: 0x7F070176
-			public const int save = 2131165558;
+			public const int register = 2131165558;
 			
 			// aapt resource value: 0x7F070177
-			public const int send = 2131165559;
+			public const int save = 2131165559;
 			
 			// aapt resource value: 0x7F070178
-			public const int tooltip_frame_dark = 2131165560;
+			public const int send = 2131165560;
 			
 			// aapt resource value: 0x7F070179
-			public const int tooltip_frame_light = 2131165561;
+			public const int tooltip_frame_dark = 2131165561;
 			
 			// aapt resource value: 0x7F07017A
-			public const int UserEmail = 2131165562;
+			public const int tooltip_frame_light = 2131165562;
+			
+			// aapt resource value: 0x7F07017B
+			public const int UserEmail = 2131165563;
 			
 			static Drawable()
 			{
@@ -17647,6 +17650,22 @@ namespace MechanicalAssistance.Prism.Droid
 			}
 			
 			private Styleable()
+			{
+			}
+		}
+		
+		public partial class Xml
+		{
+			
+			// aapt resource value: 0x7F100000
+			public const int file_paths = 2131755008;
+			
+			static Xml()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Xml()
 			{
 			}
 		}

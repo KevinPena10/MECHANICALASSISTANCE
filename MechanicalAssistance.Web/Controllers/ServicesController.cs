@@ -100,9 +100,16 @@ namespace MechanicalAssistance.Web.Controllers
                 return NotFound();
             }
 
+            if (mechanicalServiceEntity.User.UserName != User.Identity.Name)
+            {
+                return NotFound();
+            }
+
             ServiceViewModel serviceViewModel = _converterHelper.ToServiceViewModel(mechanicalServiceEntity);
             return View(serviceViewModel);
         }
+
+    
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -214,10 +221,15 @@ namespace MechanicalAssistance.Web.Controllers
                 return NotFound();
             }
 
-            var productEntity = await _context.Products.Include(p => p.ProductBrand).Include(s => s.Service).FirstOrDefaultAsync(p => p.Id == id);
+            var productEntity = await _context.Products.Include(p => p.ProductBrand).Include(s => s.Service).ThenInclude(u => u.User).FirstOrDefaultAsync(p => p.Id == id);
 
 
             if (productEntity == null)
+            {
+                return NotFound();
+            }
+
+            if (productEntity.Service.User.UserName != User.Identity.Name)
             {
                 return NotFound();
             }

@@ -1,4 +1,5 @@
-﻿using MechanicalAssistance.Web.Data;
+﻿using MechanicalAssistance.Common.Models;
+using MechanicalAssistance.Web.Data;
 using MechanicalAssistance.Web.Data.Entities;
 using MechanicalAssistance.Web.Models;
 using System.Threading.Tasks;
@@ -73,6 +74,27 @@ namespace MechanicalAssistance.Web.Helpers
                 Date = serviceEntity.Date,
                 Address = serviceEntity.Address,
                 LogoPath = serviceEntity.LogoPath
+            };
+        }
+
+        public UserResponse ToUserResponse(UserEntity user)
+        {
+            if (user == null)
+            {
+                return null;
+            }
+
+            return new UserResponse
+            {
+                Address = user.Address,
+                Document = user.Document,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                Id = user.Id,
+                LastName = user.LastName,
+                PhoneNumber = user.PhoneNumber,
+                PicturePath = user.PicturePath,
+                UserType = user.UserType
             };
         }
     }

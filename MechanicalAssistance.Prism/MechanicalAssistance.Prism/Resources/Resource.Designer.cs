@@ -385,6 +385,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mechanic.
+        /// </summary>
+        public static string Mechanic {
+            get {
+                return ResourceManager.GetString("Mechanic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modify User.
         /// </summary>
         public static string ModifyMenu {
@@ -511,6 +520,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select a role.
+        /// </summary>
+        public static string RegisterAsPlaceHolder {
+            get {
+                return ResourceManager.GetString("RegisterAsPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter a password longer than 6 characters.
         /// </summary>
         public static string SizePassword {
@@ -543,6 +561,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string TitleRegister {
             get {
                 return ResourceManager.GetString("TitleRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
             }
         }
         

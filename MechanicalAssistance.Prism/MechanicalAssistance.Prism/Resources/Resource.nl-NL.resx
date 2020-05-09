@@ -291,4 +291,13 @@
   <data name="labelDateAndTime" xml:space="preserve">
     <value>Datum en Tijd</value>
   </data>
+  <data name="RegisterAsPlaceHolder" xml:space="preserve">
+    <value>Een rol selecteren</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Gebruiker</value>
+  </data>
+  <data name="Mechanic" xml:space="preserve">
+    <value>Monteur</value>
+  </data>
 </root>

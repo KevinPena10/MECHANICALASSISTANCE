@@ -23,16 +23,19 @@ namespace MechanicalAssistance.Web.Controllers.API
         private readonly IUserHelper _userHelper;
         private readonly IMailHelper _mailHelper;
         private readonly IImageHelper _imageHelper;
+        private readonly IConverterHelper _converterHelper;
 
 
         public AccountController(
             DataContext dataContext,
             IUserHelper userHelper,
             IMailHelper mailHelper,
-            IImageHelper imageHelper)
+            IImageHelper imageHelper,
+            IConverterHelper converterHelper)
         {
             _dataContext = dataContext;
             _userHelper = userHelper;
+            _converterHelper = converterHelper;
             _mailHelper = mailHelper;
             _imageHelper = imageHelper;
 
@@ -239,10 +242,10 @@ namespace MechanicalAssistance.Web.Controllers.API
             });
         }
 
-
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         [Route("GetUserByEmail")]
-        public async Task<IActionResult> GetUser(EmailRequest emailRequest)
+        public async Task<IActionResult> GetUserByEmail([FromBody] EmailRequest emailRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -252,24 +255,13 @@ namespace MechanicalAssistance.Web.Controllers.API
             CultureInfo cultureInfo = new CultureInfo(emailRequest.CultureInfo);
             Resource.Culture = cultureInfo;
 
-            var user = await _dataContext.Users
-                  .FirstOrDefaultAsync(u => u.UserName.ToLower() == emailRequest.Email.ToLower());
-
-            var response = new
+            UserEntity userEntity = await _userHelper.GetUserByEmailAsync(emailRequest.Email);
+            if (userEntity == null)
             {
-                Id = user.Id,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Address = user.Address,
-                Document = user.Document,
-                Email = user.Email,
-                PhoneNumber = user.PhoneNumber,
-                PicturePath = user.PicturePath,
-                CultureInfo = cultureInfo
-            };
+                return NotFound(Resource.userValidator);
+            }
 
-
-            return Ok(response);
+            return Ok(_converterHelper.ToUserResponse(userEntity));
         }
 
     }

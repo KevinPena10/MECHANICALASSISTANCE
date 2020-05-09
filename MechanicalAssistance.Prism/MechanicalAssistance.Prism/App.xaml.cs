@@ -5,6 +5,8 @@ using MechanicalAssistance.Prism.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Syncfusion.Licensing;
+using MechanicalAssistance.Common.Services;
+using MechanicalAssistance.Common.Helpers;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MechanicalAssistance.Prism
@@ -26,8 +28,13 @@ namespace MechanicalAssistance.Prism
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<IRegexHelper, RegexHelper>();
+            containerRegistry.Register<IFilesHelper, FilesHelper>();
+            containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
+            containerRegistry.RegisterForNavigation<RememberPasswordPage, RememberPasswordPageViewModel>();
         }
     }
 }

@@ -5,7 +5,14 @@
              x:Class="MechanicalAssistance.Prism.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
 
-	</Application.Resources>
+            <!-- Parameters -->
+            <x:String x:Key="UrlAPI">https://mechanicalassistanceweb.azurewebsites.net</x:String>
+            <x:String x:Key="UrlNoImage">https://mechanicalassistanceweb.azurewebsites.net/images/noimage.png</x:String>
+
+
+        </ResourceDictionary>
+
+    </Application.Resources>
 </prism:PrismApplication>
