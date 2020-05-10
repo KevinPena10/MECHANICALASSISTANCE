@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+              xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MechanicalAssistance.Prism.Views.ModifyUserPage"
+             BackgroundColor="SlateGray"
+             Title="{Binding Title}">
+
+   
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All"
+                     Padding="10">
+
+                <StackLayout>
+                    <ffimageloading:CachedImage Aspect="AspectFit"
+                                                Source="{Binding Image}" 
+                                                CacheDuration= "50"
+                                                HeightRequest="170"
+                                                Margin="5"
+                                                RetryCount= "3"
+                                                RetryDelay= "600">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation />
+                        </ffimageloading:CachedImage.Transformations>
+                        <ffimageloading:CachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ChangeImageCommand}"/>
+                        </ffimageloading:CachedImage.GestureRecognizers>
+                    </ffimageloading:CachedImage>
+                <ScrollView>
+                    <StackLayout Padding="13">
+                        <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate labelDocument}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                        <Entry Grid.Row="0"
+                         Grid.Column="1"
+                          Keyboard="Numeric"
+                         FontAttributes="Bold"   
+                          Placeholder="{i18n:Translate DocumentPlaceHolder}"
+                          Text="{Binding User.Document}"/>
+                        <inputLayout:SfTextInputLayout.LeadingView>
+                            <Image Source="edit" />
+                        </inputLayout:SfTextInputLayout.LeadingView>
+                    </inputLayout:SfTextInputLayout>
+    
+
+                    <inputLayout:SfTextInputLayout
+                        Hint="{i18n:Translate labelFirstName}"
+                        ContainerType="Filled"
+                        ContainerBackgroundColor="White"
+                        LeadingViewPosition="Inside" >
+                        <Entry Grid.Row="1"
+                        Grid.Column="1"
+                        FontAttributes="Bold"   
+                        Keyboard="Text"
+                        Placeholder="{i18n:Translate NamePlaceHolder}"
+                        Text="{Binding User.FirstName}"/>
+                        <inputLayout:SfTextInputLayout.LeadingView>
+                            <Image Source="edit" />
+                        </inputLayout:SfTextInputLayout.LeadingView>
+                    </inputLayout:SfTextInputLayout>
+
+
+                    <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate labelLastName}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                        <Entry Grid.Row="2"
+                         Grid.Column="1"
+                          Keyboard="Text"
+                          FontAttributes="Bold"   
+                          Placeholder="{i18n:Translate LastNamePlaceHolder}"
+                          Text="{Binding User.LastName}"/>
+                        <inputLayout:SfTextInputLayout.LeadingView>
+                            <Image Source="edit" />
+                        </inputLayout:SfTextInputLayout.LeadingView>
+                    </inputLayout:SfTextInputLayout>
+
+
+                    <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate labelAddress}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                        <Entry Grid.Row="3"
+                         Grid.Column="1"
+                          Keyboard="Text"
+                          FontAttributes="Bold"        
+                          Placeholder="{i18n:Translate AddressPlaceHolder}"
+                          Text="{Binding User.Address}"/>
+                        <inputLayout:SfTextInputLayout.LeadingView>
+                            <Image Source="edit" />
+                        </inputLayout:SfTextInputLayout.LeadingView>
+                    </inputLayout:SfTextInputLayout>
+
+                    <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate labelPhone}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                        <Entry Grid.Row="5"
+                         Grid.Column="1"
+                           Keyboard="Telephone"
+                               FontAttributes="Bold" 
+                          Placeholder="{i18n:Translate PhonePlaceHolder}"
+                          Text="{Binding User.PhoneNumber}"/>
+                        <inputLayout:SfTextInputLayout.LeadingView>
+                            <Image Source="phone" />
+                        </inputLayout:SfTextInputLayout.LeadingView>
+                    </inputLayout:SfTextInputLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                    <buttons:SfButton x:Name="SfButton"  Command="{Binding SaveCommand}" 
+                          CornerRadius="50" IsEnabled="{Binding IsEnabled}" 
+                           WidthRequest="180"  
+                           HeightRequest = "50"           
+                           BackgroundColor="White"
+                           TextColor="Black"
+                           FontAttributes="Bold"            
+                           HorizontalTextAlignment="Center"
+                           Text="{i18n:Translate btnSave}"
+                           ImageSource="save.png" 
+                           ShowIcon="True"           
+                           ImageAlignment="Start" />
+
+
+                <buttons:SfButton x:Name="SfButtonTwo"  Command="{Binding ChangePasswordCommand}" 
+                          CornerRadius="50" IsEnabled="{Binding IsEnabled}" 
+                           WidthRequest="180"  
+                           HeightRequest = "50"           
+                           BackgroundColor="#76c5f0"
+                           TextColor="Black"
+                           FontAttributes="Bold"            
+                           HorizontalTextAlignment="Center"
+                           Text="{i18n:Translate btnChangePassword}"
+                           ImageSource="key.png" 
+                           ShowIcon="True"           
+                           ImageAlignment="End" />
+            </StackLayout>
+            </StackLayout>
+            <busyindicator:SfBusyIndicator AnimationType="Gear" 
+                                       AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                	                   AbsoluteLayout.LayoutFlags="All"
+                	                   HorizontalOptions="Center"
+                	                   TextColor="Black"
+                	                   IsVisible="{Binding IsRunning}"
+                	                   Title="{i18n:Translate Loading}"
+                	                   VerticalOptions="Center"
+                	                   ViewBoxWidth="100"
+                	                   ViewBoxHeight="100" />
+        </AbsoluteLayout>
+  
+</ContentPage>

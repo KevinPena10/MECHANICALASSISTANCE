@@ -538,6 +538,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mechanic&apos;s Services.
+        /// </summary>
+        public static string ServiceMenu {
+            get {
+                return ResourceManager.GetString("ServiceMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter a password longer than 6 characters.
         /// </summary>
         public static string SizePassword {

@@ -2,6 +2,7 @@
 using MechanicalAssistance.Common.Models;
 using MechanicalAssistance.Common.Services;
 using MechanicalAssistance.Prism.Helpers;
+using MechanicalAssistance.Prism.Views;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Navigation;
@@ -28,7 +29,6 @@ namespace MechanicalAssistance.Prism.ViewModels
             _apiService = apiService;
             _navigationService = navigationService;
             LoadUser();
-            LoadMenus();
         }
 
         public UserResponse User
@@ -58,7 +58,7 @@ namespace MechanicalAssistance.Prism.ViewModels
 
         private async void ModifyUserAsync()
         {
-            // await _navigationService.NavigateAsync($"/TravelMasterDetailPage/NavigationPage/{nameof(ModifyUserPage)}");
+            await _navigationService.NavigateAsync($"/MechanicMasterDetailPage/NavigationPage/{nameof(ModifyUserPage)}");
         }
 
         public static MechanicMasterDetailPageViewModel GetInstance()
@@ -99,6 +99,7 @@ namespace MechanicalAssistance.Prism.ViewModels
                 IsEnabledTwo = false;
                 User = JsonConvert.DeserializeObject<UserResponse>(Settings.User);
                 IsEnabled = true;
+                LoadMenus();
               
             }
             else
@@ -106,6 +107,7 @@ namespace MechanicalAssistance.Prism.ViewModels
                 IsEnabledTwo = true;
                 IsEnabled = false;
                 menuImage = "mechanicalImage.png";
+                LoadMenusTwo();
 
             }
         }
@@ -115,16 +117,16 @@ namespace MechanicalAssistance.Prism.ViewModels
             {
                 new Menu
                 {
-                    Icon = "modify",
+                    Icon = "gestures",
                     PageName = "ServicePage",
-                    Title = Languages.ModifyMenu
+                    Title = Languages.ServiceMenu
                 },
-
+               
                 new Menu
-                {
-                    Icon = "modify",
-                    PageName = "ModifyUserPage",
-                    Title = Languages.ModifyMenu
+                { 
+                    Icon = "modify" ,
+                    PageName = "ModifyUserPage" ,
+                    Title = Languages.ModifyMenu 
                 },
                 new Menu
                 {
@@ -134,8 +136,32 @@ namespace MechanicalAssistance.Prism.ViewModels
                 }
             };
 
+            Menus = new ObservableCollection<MenuItemViewModel>(
+                menus.Select(m => new MenuItemViewModel(_navigationService)
+                {
+                    Icon = m.Icon,
+                    PageName = m.PageName,
+                    Title = m.Title
+                }).ToList());
+        }
 
-
+        private void LoadMenusTwo()
+        {
+            List<Menu> menus = new List<Menu>
+            {
+                new Menu
+                {
+                    Icon = "gestures",
+                    PageName = "ServicePage",
+                    Title = Languages.ServiceMenu
+                },
+                new Menu
+                {
+                    Icon = "login",
+                    PageName = "LoginPage",
+                    Title = Settings.IsLogin ? Languages.LogoutMenu : Languages.LoginMenu
+                }
+            };
 
             Menus = new ObservableCollection<MenuItemViewModel>(
                 menus.Select(m => new MenuItemViewModel(_navigationService)

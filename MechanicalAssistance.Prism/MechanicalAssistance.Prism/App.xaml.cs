@@ -37,6 +37,8 @@ namespace MechanicalAssistance.Prism
             containerRegistry.RegisterForNavigation<RememberPasswordPage, RememberPasswordPageViewModel>();
             containerRegistry.RegisterForNavigation<MechanicMasterDetailPage, MechanicMasterDetailPageViewModel > ();
             containerRegistry.RegisterForNavigation<ServicePage, ServicePageViewModel>();
+            containerRegistry.RegisterForNavigation<ModifyUserPage, ModifyUserPageViewModel>();
+            containerRegistry.RegisterForNavigation<ChangePasswordPage, ChangePasswordPageViewModel>();
         }
     }
 }

@@ -303,4 +303,7 @@
   <data name="LoginMenu" xml:space="preserve">
     <value>Aanmelden</value>
   </data>
+  <data name="ServiceMenu" xml:space="preserve">
+    <value>Mechanics Services</value>
+  </data>
 </root>

@@ -1,4 +1,5 @@
 ﻿using MechanicalAssistance.Common.Services;
+using MechanicalAssistance.Prism.Helpers;
 using Prism.Navigation;
 
 namespace MechanicalAssistance.Prism.ViewModels
@@ -13,7 +14,7 @@ namespace MechanicalAssistance.Prism.ViewModels
         {
             _navigationService = navigationService;
             _apiService = apiService;
-            Title = "Service quemado";
+            Title = Languages.ServiceMenu;
         }
     }
 }

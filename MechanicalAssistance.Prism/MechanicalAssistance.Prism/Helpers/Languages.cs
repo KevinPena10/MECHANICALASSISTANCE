@@ -58,7 +58,7 @@ namespace MechanicalAssistance.Prism.Helpers
 
         public static string UserUpdated => Resource.UserUpdated;
 
-       // public static string btnChangePassword => Resource.btnChangePassword;
+       public static string btnChangePassword => Resource.btnChangePassword;
         public static string CurrentPasswordValidation => Resource.CurrentPasswordValidation;
 
         public static string RegisterAsPlaceHolder => Resource.RegisterAsPlaceHolder;
@@ -66,6 +66,8 @@ namespace MechanicalAssistance.Prism.Helpers
         public static string User => Resource.User;
 
         public static string Mechanic => Resource.Mechanic;
+
+        public static string ServiceMenu => Resource.ServiceMenu;
 
 
     }
