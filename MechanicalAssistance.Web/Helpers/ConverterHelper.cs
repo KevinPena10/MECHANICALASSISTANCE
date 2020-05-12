@@ -2,6 +2,7 @@
 using MechanicalAssistance.Web.Data;
 using MechanicalAssistance.Web.Data.Entities;
 using MechanicalAssistance.Web.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MechanicalAssistance.Web.Helpers
@@ -64,6 +65,7 @@ namespace MechanicalAssistance.Web.Helpers
             };
         }
 
+   
         public ServiceViewModel ToServiceViewModel(MechanicalServiceEntity serviceEntity)
         {
             return new ServiceViewModel
@@ -96,6 +98,31 @@ namespace MechanicalAssistance.Web.Helpers
                 PicturePath = user.PicturePath,
                 UserType = user.UserType
             };
+        }
+
+        public ServiceResponse ToServiceResponse(MechanicalServiceEntity serviceEntity)
+        {
+            return new ServiceResponse
+            {
+                Id = serviceEntity.Id,
+                ServiceName = serviceEntity.ServiceName,
+                Description = serviceEntity.Description,
+                Date = serviceEntity.Date,
+                Address = serviceEntity.Address,
+                LogoPath = serviceEntity.LogoPath,
+                User = ToUserResponse(serviceEntity.User)
+            };
+        }
+
+        public List<ServiceResponse> ToServiceResponse(List<MechanicalServiceEntity> servicesEntities)
+        {
+            List<ServiceResponse> list = new List<ServiceResponse>();
+            foreach (MechanicalServiceEntity serviceEntity in servicesEntities)
+            {
+                list.Add(ToServiceResponse(serviceEntity));
+            }
+
+            return list;
         }
     }
 

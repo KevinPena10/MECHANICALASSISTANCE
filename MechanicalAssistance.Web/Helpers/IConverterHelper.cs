@@ -1,6 +1,7 @@
 ﻿using MechanicalAssistance.Common.Models;
 using MechanicalAssistance.Web.Data.Entities;
 using MechanicalAssistance.Web.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MechanicalAssistance.Web.Helpers
@@ -14,5 +15,9 @@ namespace MechanicalAssistance.Web.Helpers
 
         MechanicalServiceEntity ToServiceEntity(ServiceViewModel model, string path, bool isNew);
         ServiceViewModel ToServiceViewModel(MechanicalServiceEntity serviceEntity);
+
+
+        ServiceResponse ToServiceResponse(MechanicalServiceEntity serviceEntity);
+        List<ServiceResponse> ToServiceResponse(List<MechanicalServiceEntity> servicesEntities);
     }
 }
