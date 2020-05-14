@@ -70,5 +70,16 @@ namespace MechanicalAssistance.Prism.Helpers
         public static string ServiceMenu => Resource.ServiceMenu;
 
 
+        public static string titleManage => Resource.titleManage;
+
+        public static string titleProducts => Resource.titleProducts;
+
+        public static string titleNewProduct => Resource.titleNewProduct;
+
+        public static string titleServiceDetails => Resource.titleServiceDetails;
+        
+
+
+
     }
 }

@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Syncfusion.Licensing" Version="18.1.0.48" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="18.1.0.48" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.1.0.48" />
     <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="17.4.0.55" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
@@ -45,13 +46,25 @@
     <EmbeddedResource Update="Views\ModifyUserPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\NewProductPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ProductPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\RegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RememberPasswordPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ServiceDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ServicePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ServiceTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

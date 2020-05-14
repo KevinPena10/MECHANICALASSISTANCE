@@ -51,7 +51,7 @@
                         @foreach (var item in Model.Products)
                         {
                             <tr>
-                                <td>
+                                <td style="padding-right: 60px;">
                                     @if (!string.IsNullOrEmpty(item.Photo))
                                     {
                                         <img src="@Url.Content(item.Photo)" alt="Image" style="width:180px;height:180px;max-width: 180%; height: auto;" />

@@ -2,9 +2,7 @@
 using MechanicalAssistance.Common.Models;
 using Prism.Commands;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace MechanicalAssistance.Prism.ViewModels
 {

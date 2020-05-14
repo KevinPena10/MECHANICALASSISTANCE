@@ -277,7 +277,7 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date:.
+        ///   Looks up a localized string similar to Date of publication:.
         /// </summary>
         public static string labelDate {
             get {
@@ -408,6 +408,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string ModifyMenu {
             get {
                 return ResourceManager.GetString("ModifyMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name:.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
         
@@ -565,6 +574,33 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Service Management.
+        /// </summary>
+        public static string titleManage {
+            get {
+                return ResourceManager.GetString("titleManage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Product.
+        /// </summary>
+        public static string titleNewProduct {
+            get {
+                return ResourceManager.GetString("titleNewProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Products.
+        /// </summary>
+        public static string titleProducts {
+            get {
+                return ResourceManager.GetString("titleProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Recover Password.
         /// </summary>
         public static string TitleRecoverPass {
@@ -579,6 +615,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string TitleRegister {
             get {
                 return ResourceManager.GetString("TitleRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Details .
+        /// </summary>
+        public static string titleServiceDetails {
+            get {
+                return ResourceManager.GetString("titleServiceDetails", resourceCulture);
             }
         }
         

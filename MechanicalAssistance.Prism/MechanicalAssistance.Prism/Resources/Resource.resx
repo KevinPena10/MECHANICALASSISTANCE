@@ -280,7 +280,7 @@
     <value>Confirm New Password</value>
   </data>
   <data name="labelDate" xml:space="preserve">
-    <value>Date:</value>
+    <value>Date of publication:</value>
   </data>
   <data name="labelStartDate" xml:space="preserve">
     <value>Start Date</value>
@@ -305,5 +305,20 @@
   </data>
   <data name="ServiceMenu" xml:space="preserve">
     <value>Mechanic's Services</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="titleManage" xml:space="preserve">
+    <value>Service Management</value>
+  </data>
+  <data name="titleProducts" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="titleNewProduct" xml:space="preserve">
+    <value>Create Product</value>
+  </data>
+  <data name="titleServiceDetails" xml:space="preserve">
+    <value>Service Details </value>
   </data>
 </root>

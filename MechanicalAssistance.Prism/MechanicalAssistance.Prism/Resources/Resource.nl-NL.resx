@@ -279,9 +279,6 @@
   <data name="LabelConfirmNewPassword" xml:space="preserve">
     <value>Nieuw wachtwoord bevestigen</value>
   </data>
-  <data name="labelDate" xml:space="preserve">
-    <value>Datum:</value>
-  </data>
   <data name="labelStartDate" xml:space="preserve">
     <value>Begindatum</value>
   </data>
@@ -305,5 +302,23 @@
   </data>
   <data name="ServiceMenu" xml:space="preserve">
     <value>Mechanics Services</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Naam:</value>
+  </data>
+  <data name="labelDate" xml:space="preserve">
+    <value>Datum publicatie:</value>
+  </data>
+  <data name="titleManage" xml:space="preserve">
+    <value>Service management</value>
+  </data>
+  <data name="titleProducts" xml:space="preserve">
+    <value>Producten</value>
+  </data>
+  <data name="titleNewProduct" xml:space="preserve">
+    <value>Product Maken</value>
+  </data>
+  <data name="titleServiceDetails" xml:space="preserve">
+    <value>Service Details</value>
   </data>
 </root>
