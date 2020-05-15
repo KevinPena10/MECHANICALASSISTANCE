@@ -250,6 +250,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Brand:.
+        /// </summary>
+        public static string Labelbrand {
+            get {
+                return ResourceManager.GetString("Labelbrand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm New Password.
         /// </summary>
         public static string LabelConfirmNewPassword {
@@ -295,6 +304,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description:.
+        /// </summary>
+        public static string Labeldescription {
+            get {
+                return ResourceManager.GetString("Labeldescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Document.
         /// </summary>
         public static string labelDocument {
@@ -336,6 +354,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string labelPhone {
             get {
                 return ResourceManager.GetString("labelPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price:.
+        /// </summary>
+        public static string Labelprice {
+            get {
+                return ResourceManager.GetString("Labelprice", resourceCulture);
             }
         }
         

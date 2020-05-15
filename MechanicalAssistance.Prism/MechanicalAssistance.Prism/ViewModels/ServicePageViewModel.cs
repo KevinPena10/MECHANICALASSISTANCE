@@ -25,7 +25,7 @@ namespace MechanicalAssistance.Prism.ViewModels
             Title = Languages.ServiceMenu;
 
             LoadUser();
-            LoadTravelsAsync();
+            LoadServiceAsync();
         }
 
         public UserResponse User
@@ -55,7 +55,7 @@ namespace MechanicalAssistance.Prism.ViewModels
             }
         }
 
-        private async void LoadTravelsAsync()
+        private async void LoadServiceAsync()
         {
             IsRunning = true;
             string url = App.Current.Resources["UrlAPI"].ToString();

@@ -124,6 +124,60 @@ namespace MechanicalAssistance.Web.Helpers
 
             return list;
         }
+
+        public ProductResponse ToProductsResponse(ProductEntity productEntity)
+        {
+            return new ProductResponse
+            {
+                Id = productEntity.Id,
+                ProductName = productEntity.ProductName,
+                Description = productEntity.Description,
+                Price = productEntity.Price,
+                Photo = productEntity.Photo,
+                Service = ToServiceResponseTwo(productEntity.Service),
+                ProductBrand = ToProductBrandResponse(productEntity.ProductBrand)
+            };
+        }
+
+        public List<ProductResponse> ToProductsResponse(List<ProductEntity> productEntities)
+        {
+            List<ProductResponse> list = new List<ProductResponse>();
+            foreach (ProductEntity ProductEntity in productEntities)
+            {
+                list.Add(ToProductsResponse(ProductEntity));
+            }
+
+            return list;
+        }
+
+        private ServiceResponse ToServiceResponseTwo(MechanicalServiceEntity Service)
+        {
+            if (Service == null)
+            {
+                return null;
+            }
+
+            return new ServiceResponse
+            {
+                Id = Service.Id
+
+            };
+        }
+
+        private ProductBrandResponse ToProductBrandResponse(ProductBrandEntity ProductBrand)
+        {
+            if (ProductBrand == null)
+            {
+                return null;
+            }
+
+            return new ProductBrandResponse
+            {
+                Id = ProductBrand.Id,
+                BrandName = ProductBrand.BrandName
+
+            };
+        }
     }
 
 

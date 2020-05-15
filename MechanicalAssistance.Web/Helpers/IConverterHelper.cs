@@ -16,8 +16,10 @@ namespace MechanicalAssistance.Web.Helpers
         MechanicalServiceEntity ToServiceEntity(ServiceViewModel model, string path, bool isNew);
         ServiceViewModel ToServiceViewModel(MechanicalServiceEntity serviceEntity);
 
-
         ServiceResponse ToServiceResponse(MechanicalServiceEntity serviceEntity);
         List<ServiceResponse> ToServiceResponse(List<MechanicalServiceEntity> servicesEntities);
+
+        ProductResponse ToProductsResponse(ProductEntity productEntity);
+        List<ProductResponse> ToProductsResponse(List<ProductEntity> productEntities);
     }
 }

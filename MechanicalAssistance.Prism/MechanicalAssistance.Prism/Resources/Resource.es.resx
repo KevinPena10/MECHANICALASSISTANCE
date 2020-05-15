@@ -321,4 +321,13 @@
   <data name="titleServiceDetails" xml:space="preserve">
     <value>Detalles</value>
   </data>
+  <data name="Labeldescription" xml:space="preserve">
+    <value>Descripción:</value>
+  </data>
+  <data name="Labelprice" xml:space="preserve">
+    <value>Precio:</value>
+  </data>
+  <data name="Labelbrand" xml:space="preserve">
+    <value>Marca:</value>
+  </data>
 </root>
