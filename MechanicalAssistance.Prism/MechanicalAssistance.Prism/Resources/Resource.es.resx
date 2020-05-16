@@ -315,9 +315,6 @@
   <data name="titleProducts" xml:space="preserve">
     <value>Productos</value>
   </data>
-  <data name="titleNewProduct" xml:space="preserve">
-    <value>Crear Producto</value>
-  </data>
   <data name="titleServiceDetails" xml:space="preserve">
     <value>Detalles</value>
   </data>
@@ -329,5 +326,38 @@
   </data>
   <data name="Labelbrand" xml:space="preserve">
     <value>Marca:</value>
+  </data>
+  <data name="LabelProductName" xml:space="preserve">
+    <value>Nombre del Producto</value>
+  </data>
+  <data name="ProductNamePlaceH" xml:space="preserve">
+    <value>Escriba el nombre del producto</value>
+  </data>
+  <data name="LabelDescriptionP" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="DescriptionPlaceHolder" xml:space="preserve">
+    <value>Escriba la descripción del producto</value>
+  </data>
+  <data name="LabelPriceT" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="SelectBrand" xml:space="preserve">
+    <value>Seleccione una marca de producto</value>
+  </data>
+  <data name="titleNewProduct" xml:space="preserve">
+    <value>Crear nuevo producto</value>
+  </data>
+  <data name="PNameValidation" xml:space="preserve">
+    <value>Por favor, ingrese el nombre del producto</value>
+  </data>
+  <data name="DescriptionValidation" xml:space="preserve">
+    <value>Por favor, ingrese la descripción del producto</value>
+  </data>
+  <data name="BrandValidation" xml:space="preserve">
+    <value>Por favor seleccione una marca</value>
+  </data>
+  <data name="PriceValidation" xml:space="preserve">
+    <value>Por favor, ingrese un valor válido para el precio</value>
   </data>
 </root>

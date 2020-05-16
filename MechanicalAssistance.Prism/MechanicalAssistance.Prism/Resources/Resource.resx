@@ -316,7 +316,7 @@
     <value>Products</value>
   </data>
   <data name="titleNewProduct" xml:space="preserve">
-    <value>Create Product</value>
+    <value>Create new product</value>
   </data>
   <data name="titleServiceDetails" xml:space="preserve">
     <value>Service Details </value>
@@ -329,5 +329,35 @@
   </data>
   <data name="Labelbrand" xml:space="preserve">
     <value>Brand:</value>
+  </data>
+  <data name="LabelProductName" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="ProductNamePlaceH" xml:space="preserve">
+    <value>Enter the name of the product</value>
+  </data>
+  <data name="LabelDescriptionP" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DescriptionPlaceHolder" xml:space="preserve">
+    <value>Enter product description </value>
+  </data>
+  <data name="LabelPriceT" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="SelectBrand" xml:space="preserve">
+    <value>Select a Product Brand</value>
+  </data>
+  <data name="PNameValidation" xml:space="preserve">
+    <value>Please enter  name of the product</value>
+  </data>
+  <data name="DescriptionValidation" xml:space="preserve">
+    <value>Please enter the description of product</value>
+  </data>
+  <data name="BrandValidation" xml:space="preserve">
+    <value>Please select a brand </value>
+  </data>
+  <data name="PriceValidation" xml:space="preserve">
+    <value>Please enter a valid value for the price</value>
   </data>
 </root>

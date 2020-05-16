@@ -1,11 +1,121 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
+             xmlns:prism="http://prismlibrary.com" 
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" 
+             xmlns:numeric="clr-namespace:Syncfusion.SfNumericUpDown.XForms;assembly=Syncfusion.SfNumericUpDown.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              x:Class="MechanicalAssistance.Prism.Views.NewProductPage"
-              IconImageSource="add"
              BackgroundColor="SlateGray"
              Title="{Binding Title}">
-  
+
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All"
+                     Padding="21">
+
+            <StackLayout>
+                <ffimageloading:CachedImage Aspect="AspectFit"
+                                                Source="{Binding Image}" 
+                                                CacheDuration= "50"
+                                                HeightRequest="150"
+                                                Margin="5"
+                                                RetryCount= "3"
+                                                RetryDelay= "600">
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeImageCommand}"/>
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                </ffimageloading:CachedImage>
+
+                <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate LabelProductName}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                    <Entry Grid.Row="0"
+                         Grid.Column="1"
+                          Keyboard="Text"
+                          Placeholder="{i18n:Translate ProductNamePlaceH}"
+                          Text="{Binding Product.ProductName}"/>
+                    <inputLayout:SfTextInputLayout.LeadingView>
+                        <Image Source="edit" />
+                    </inputLayout:SfTextInputLayout.LeadingView>
+                </inputLayout:SfTextInputLayout>
+
+                <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate LabelDescriptionP}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                    <Editor Grid.Row="0"
+                        Grid.Column="1"
+                        Keyboard="Text"
+                        HeightRequest="90"
+                        Placeholder="{i18n:Translate DescriptionPlaceHolder}"
+                        Text="{Binding Product.Description}">
+                    </Editor>
+                    <inputLayout:SfTextInputLayout.LeadingView>
+                        <Image Source="edit" />
+                    </inputLayout:SfTextInputLayout.LeadingView>
+                </inputLayout:SfTextInputLayout>
+
+
+                <inputLayout:SfTextInputLayout 
+                               Hint="{i18n:Translate SelectBrand}"
+                                ContainerType="Filled"
+                                ContainerBackgroundColor="White">
+                    <Picker Grid.Row="7"
+                                Grid.Column="1"
+                                ItemDisplayBinding="{Binding BrandName}"
+                                ItemsSource="{Binding ProductBrands}"
+                                SelectedItem="{Binding ProductBrand}">
+                    </Picker>
+                </inputLayout:SfTextInputLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="7" VerticalOptions="CenterAndExpand">
+                    <Image Source="price" />
+                    <Label 
+                     Text="{i18n:Translate LabelPriceT}"
+                     TextColor="Black"  FontAttributes="Bold"        
+                     VerticalOptions="Center"/>
+
+                    <numeric:SfNumericUpDown x:Name="numericUpDown"  BackgroundColor="White"   Value="{Binding Product.Price}" WidthRequest="270" Minimum="1000" FormatString="000" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Padding="20" VerticalOptions="EndAndExpand">
+                <buttons:SfButton x:Name="SfButton"  Command="{Binding SaveCommand}" 
+                          CornerRadius="100" 
+                           IsEnabled="{Binding IsEnabled}" 
+                           WidthRequest="20"  
+                           HeightRequest = "50"           
+                           BackgroundColor="White"
+                           TextColor="Black"
+                           FontAttributes="Bold"            
+                           HorizontalTextAlignment="Center"
+                           Text="{i18n:Translate btnSave}"
+                           ImageSource="save.png" 
+                           ShowIcon="True"           
+                           ImageAlignment="End" />
+            </StackLayout>
+
+        </StackLayout>
+
+        <busyindicator:SfBusyIndicator AnimationType="DoubleCircle" 
+                                       AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                	                   AbsoluteLayout.LayoutFlags="All"
+                	                   HorizontalOptions="Center"
+                	                   TextColor="Black"
+                	                   IsVisible="{Binding IsRunning}"
+                	                   Title="{i18n:Translate Loading}"
+                	                   VerticalOptions="Center"
+                	                   ViewBoxWidth="100"
+                	                   ViewBoxHeight="100" />
+    </AbsoluteLayout>
+
+
 </ContentPage>

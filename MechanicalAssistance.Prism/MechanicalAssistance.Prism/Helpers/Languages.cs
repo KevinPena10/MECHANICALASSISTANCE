@@ -77,9 +77,13 @@ namespace MechanicalAssistance.Prism.Helpers
         public static string titleNewProduct => Resource.titleNewProduct;
 
         public static string titleServiceDetails => Resource.titleServiceDetails;
-        
 
+        public static string PNameValidation => Resource.PNameValidation;
 
+        public static string DescriptionValidation => Resource.DescriptionValidation;
+
+        public static string PriceValidation => Resource.PriceValidation;
+        public static string BrandValidation => Resource.BrandValidation;
 
     }
 }

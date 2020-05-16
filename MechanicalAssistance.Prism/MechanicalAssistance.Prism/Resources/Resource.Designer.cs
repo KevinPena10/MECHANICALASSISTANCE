@@ -88,6 +88,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select a brand .
+        /// </summary>
+        public static string BrandValidation {
+            get {
+                return ResourceManager.GetString("BrandValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Password.
         /// </summary>
         public static string btnChangePassword {
@@ -147,6 +156,24 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string CurrentPasswordValidation {
             get {
                 return ResourceManager.GetString("CurrentPasswordValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter product description .
+        /// </summary>
+        public static string DescriptionPlaceHolder {
+            get {
+                return ResourceManager.GetString("DescriptionPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter the description of product.
+        /// </summary>
+        public static string DescriptionValidation {
+            get {
+                return ResourceManager.GetString("DescriptionValidation", resourceCulture);
             }
         }
         
@@ -313,6 +340,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string LabelDescriptionP {
+            get {
+                return ResourceManager.GetString("LabelDescriptionP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Document.
         /// </summary>
         public static string labelDocument {
@@ -363,6 +399,24 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string Labelprice {
             get {
                 return ResourceManager.GetString("Labelprice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string LabelPriceT {
+            get {
+                return ResourceManager.GetString("LabelPriceT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Product Name.
+        /// </summary>
+        public static string LabelProductName {
+            get {
+                return ResourceManager.GetString("LabelProductName", resourceCulture);
             }
         }
         
@@ -556,6 +610,33 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please enter  name of the product.
+        /// </summary>
+        public static string PNameValidation {
+            get {
+                return ResourceManager.GetString("PNameValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter a valid value for the price.
+        /// </summary>
+        public static string PriceValidation {
+            get {
+                return ResourceManager.GetString("PriceValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the name of the product.
+        /// </summary>
+        public static string ProductNamePlaceH {
+            get {
+                return ResourceManager.GetString("ProductNamePlaceH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
@@ -570,6 +651,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string RegisterAsPlaceHolder {
             get {
                 return ResourceManager.GetString("RegisterAsPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a Product Brand.
+        /// </summary>
+        public static string SelectBrand {
+            get {
+                return ResourceManager.GetString("SelectBrand", resourceCulture);
             }
         }
         
@@ -610,7 +700,7 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create Product.
+        ///   Looks up a localized string similar to Create new product.
         /// </summary>
         public static string titleNewProduct {
             get {

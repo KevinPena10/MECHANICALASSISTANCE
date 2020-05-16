@@ -8,5 +8,6 @@ namespace MechanicalAssistance.Prism.Views
         {
             InitializeComponent();
         }
+
     }
 }

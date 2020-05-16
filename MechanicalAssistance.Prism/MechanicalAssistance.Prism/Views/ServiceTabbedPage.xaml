@@ -10,7 +10,6 @@
 
     <TabbedPage.Children>
         <local:ProductPage/>
-        <local:NewProductPage/>
         <local:ServiceDetailsPage/>
     </TabbedPage.Children>
 

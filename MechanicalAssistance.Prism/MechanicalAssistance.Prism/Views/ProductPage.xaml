@@ -6,20 +6,35 @@
              xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers"
              xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
              xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms" 
-             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MechanicalAssistance.Prism.Views.ProductPage"
              IconImageSource="products"
              BackgroundColor="SlateGray"
              Title="{Binding Title}">
 
-    <ScrollView>
-        <AbsoluteLayout>
-            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="All" 
                      Padding="10">
-
-                <StackLayout Padding="4"></StackLayout>
+            <StackLayout Padding="10" >
+                <buttons:SfButton x:Name="SfButton"  Command="{Binding createCommand}" 
+                           CornerRadius="100"
+                           IsVisible="{Binding IsVisible}" 
+                           WidthRequest="55"  
+                           HeightRequest = "60"           
+                           BackgroundColor="#76c5f0"    
+                           TextColor="White"
+                           FontAttributes="Bold"   
+                           HorizontalTextAlignment="Center"
+                           Text="{i18n:Translate titleNewProduct}"
+                           ImageSource="add.png" 
+                           ShowIcon="True"           
+                           ImageAlignment="Top" />
+            </StackLayout>
+            <ScrollView>
                 <CollectionView ItemsSource="{Binding Products}">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="2"/>
@@ -28,10 +43,10 @@
                         <DataTemplate>
                             <StackLayout Padding="12">
                                 <cards:SfCardView ShadowColor="Transparent"  HeightRequest="500" BackgroundColor="LightGray">
-                                <Grid >
-                                    <StackLayout VerticalOptions="Center"   Grid.Row="0" >
+                                    <Grid >
+                                        <StackLayout VerticalOptions="Center"   Grid.Row="0" >
 
-                                        <StackLayout Padding="8"></StackLayout>
+                                            <StackLayout Padding="8"></StackLayout>
                                             <ffimageloading:CachedImage x:Name="PictureTwo" 
                                                 Aspect="AspectFit"
                                                 Source="{Binding LogoFullPath}" 
@@ -40,14 +55,14 @@
                                                 WidthRequest="250">
                                             </ffimageloading:CachedImage>
 
-                                        <Label Text="{Binding ProductName}" 
+                                            <Label Text="{Binding ProductName}" 
                                                FontAttributes="Bold"
                                                FontSize="Title"
                                                TextColor="black"
                                                LineBreakMode="TailTruncation" 
                                                HorizontalOptions="CenterAndExpand"/>
-                                        <StackLayout Padding="20" >
-                                            <Label Text="{i18n:Translate Labeldescription}"
+                                            <StackLayout Padding="20" >
+                                                <Label Text="{i18n:Translate Labeldescription}"
                                                LineBreakMode="TailTruncation"
                                                FontAttributes="Bold"
                                                FontSize="Subtitle"
@@ -59,41 +74,42 @@
                                                FontSize="Body"       
                                                HorizontalOptions="StartAndExpand"/>
                                                 <StackLayout  Orientation="Horizontal"  VerticalOptions="StartAndExpand">
-                                                <Label Text="{i18n:Translate Labelprice}"
+                                                    <Label Text="{i18n:Translate Labelprice}"
                                                    LineBreakMode="TailTruncation"
                                                     FontSize="Subtitle"        
                                                    FontAttributes="Bold"
                                                    TextColor="black"
                                                    VerticalOptions="End" />
-                                                <Label Text="{Binding Price}"
+                                                    <Label Text="{Binding Price}"
                                                    LineBreakMode="TailTruncation"
                                                    FontSize="Body"         
                                                    TextColor="black"
                                                    VerticalOptions="End" />
-                                            </StackLayout>
-                                            <StackLayout  Orientation="Horizontal"  VerticalOptions="StartAndExpand">
-                                                <Label Text="{i18n:Translate Labelbrand}"
+                                                </StackLayout>
+                                                <StackLayout  Orientation="Horizontal"  VerticalOptions="StartAndExpand">
+                                                    <Label Text="{i18n:Translate Labelbrand}"
                                                    LineBreakMode="TailTruncation"
                                                    FontSize="Subtitle"
                                                    FontAttributes="Bold"
                                                    TextColor="black"
                                                    VerticalOptions="End" />
-                                                <Label Text="{Binding ProductBrand.BrandName}"
+                                                    <Label Text="{Binding ProductBrand.BrandName}"
                                                    LineBreakMode="TailTruncation"
                                                    FontSize="Body" 
                                                    TextColor="black"
                                                    VerticalOptions="End" />
+                                                </StackLayout>
                                             </StackLayout>
                                         </StackLayout>
-                                    </StackLayout>
-                                </Grid>
-                            </cards:SfCardView>
+                                    </Grid>
+                                </cards:SfCardView>
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </StackLayout>
-            <busyindicator:SfBusyIndicator AnimationType="DoubleCircle" 
+            </ScrollView>
+        </StackLayout>
+        <busyindicator:SfBusyIndicator AnimationType="DoubleCircle" 
                                        AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
                                        AbsoluteLayout.LayoutFlags="All"
                                        HorizontalOptions="Center"
@@ -103,6 +119,5 @@
                                        VerticalOptions="Center"
                                        ViewBoxWidth="80"
                                        ViewBoxHeight="80" />
-        </AbsoluteLayout>
-    </ScrollView>
+    </AbsoluteLayout>
 </ContentPage>

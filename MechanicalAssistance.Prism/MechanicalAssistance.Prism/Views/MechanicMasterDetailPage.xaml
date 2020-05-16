@@ -36,6 +36,7 @@
                             <fftransformations:CircleTransformation/>
                         </ffimageloading:CachedImage.Transformations>
                     </ffimageloading:CachedImage>
+                    
                     <Label FontAttributes="Bold"
                           
                            HorizontalTextAlignment="Center"

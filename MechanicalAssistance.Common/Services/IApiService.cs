@@ -20,5 +20,8 @@ namespace MechanicalAssistance.Common.Services
 
         Task<Response> GetUserByEmail(string urlBase, string servicePrefix, string controller, string tokenType, string accessToken, EmailRequest email);
 
+        Task<Response> NewProductAsync(string urlBase, string servicePrefix, string controller, ProductRequest productlRequest, string tokenType, string accessToken);
+
+
     }
 }
