@@ -160,6 +160,15 @@
     <value>Gebruiker bestaat niet</value>
   </data>
   <data name="EmailConfirmation" xml:space="preserve">
-    <value>Bedankt voor het bevestigen van je email Nu kunt u inloggen op de app     </value>
+    <value>Bedankt voor het bevestigen van je email Nu kunt u inloggen op de app</value>
+  </data>
+  <data name="ServiceValidation" xml:space="preserve">
+    <value>Geen service gevonden met deze id</value>
+  </data>
+  <data name="ProductBrandValidation" xml:space="preserve">
+    <value>Geen merk werden gevonden met deze id </value>
+  </data>
+  <data name="ProductMessage" xml:space="preserve">
+    <value>Het product is correct opgeslagen </value>
   </data>
 </root>

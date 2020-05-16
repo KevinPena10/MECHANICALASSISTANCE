@@ -162,4 +162,13 @@
   <data name="EmailConfirmation" xml:space="preserve">
     <value> Thank you for confirming your email. Now you can login into App.</value>
   </data>
+  <data name="ServiceValidation" xml:space="preserve">
+    <value>No service found with this id</value>
+  </data>
+  <data name="ProductBrandValidation" xml:space="preserve">
+    <value>No brand were found with this id </value>
+  </data>
+  <data name="ProductMessage" xml:space="preserve">
+    <value>The product was saved correctly </value>
+  </data>
 </root>

@@ -239,5 +239,31 @@ namespace MechanicalAssistance.Web.Resources {
                 return ResourceManager.GetString("userValidator", resourceCulture);
             }
         }
+
+        public static string ServiceValidation
+        {
+            get
+            {
+                return ResourceManager.GetString("ServiceValidation", resourceCulture);
+            }
+        }
+
+        public static string ProductBrandValidation
+        {
+            get
+            {
+                return ResourceManager.GetString("ProductBrandValidation", resourceCulture);
+            }
+        }
+
+        public static string ProductMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("ProductMessage", resourceCulture);
+            }
+        }
+
+        
     }
 }

@@ -162,4 +162,13 @@
   <data name="EmailConfirmation" xml:space="preserve">
     <value>Gracias por confirmar tu correo electrónico Ahora puede iniciar sesión en la aplicación</value>
   </data>
+  <data name="ServiceValidation" xml:space="preserve">
+    <value>No se encontró un servicio con este id</value>
+  </data>
+  <data name="ProductBrandValidation" xml:space="preserve">
+    <value>No se encontró ninguna marca con este id </value>
+  </data>
+  <data name="ProductMessage" xml:space="preserve">
+    <value>El producto se guardó correctamente </value>
+  </data>
 </root>
