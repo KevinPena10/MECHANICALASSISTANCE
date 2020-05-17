@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">MechanicalAssistance.Prism.Droid</string>
+	<string name="app_name">MechanicalAssistance</string>
+  <string name="facebook_app_name">MechanicalAssistance</string>
+  <string name="facebook_app_id">292621801901400</string>
+  <string name="fb_login_protocol_scheme">fb292621801901400</string>
 </resources>
+

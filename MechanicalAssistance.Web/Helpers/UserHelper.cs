@@ -1,4 +1,6 @@
-﻿using MechanicalAssistance.Web.Data;
+﻿using MechanicalAssistance.Common.Enums;
+using MechanicalAssistance.Common.Models;
+using MechanicalAssistance.Web.Data;
 using MechanicalAssistance.Web.Data.Entities;
 using MechanicalAssistance.Web.Models;
 using Microsoft.AspNetCore.Identity;
@@ -66,6 +68,34 @@ namespace MechanicalAssistance.Web.Helpers
             return await _userManager.CreateAsync(user, password);
         }
 
+        public async Task<UserEntity> AddUserAsync(FacebookProfile model)
+        {
+            UserEntity userEntity = new UserEntity
+            {
+                Address = "...",
+                Document = "...",
+                Email = model.Email,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                PicturePath = model.Picture?.Data?.Url,
+                PhoneNumber = "...",
+                UserName = model.Email,
+                UserType = UserType.User,
+                LoginType = LoginType.Facebook
+            };
+
+            IdentityResult result = await _userManager.CreateAsync(userEntity, model.Id);
+            if (result != IdentityResult.Success)
+            {
+                return null;
+            }
+
+            UserEntity newUser = await GetUserByEmailAsync(model.Email);
+            await AddUserToRoleAsync(newUser, userEntity.UserType.ToString());
+            return newUser;
+        }
+
+
         public async Task<bool> IsUserInRoleAsync(UserEntity user, string roleName)
         {
             return await _userManager.IsInRoleAsync(user, roleName);
@@ -118,5 +148,7 @@ namespace MechanicalAssistance.Web.Helpers
         {
             return await _userManager.ResetPasswordAsync(user, token, password);
         }
+
+
     }
 }

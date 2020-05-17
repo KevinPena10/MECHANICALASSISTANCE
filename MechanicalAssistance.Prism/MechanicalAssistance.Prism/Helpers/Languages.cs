@@ -84,6 +84,10 @@ namespace MechanicalAssistance.Prism.Helpers
 
         public static string PriceValidation => Resource.PriceValidation;
         public static string BrandValidation => Resource.BrandValidation;
+        public static string LoginFacebook => Resource.LoginFacebook;
+
+        public static string ChangePhotoNoAppUser => Resource.ChangePhotoNoAppUser;
+
 
     }
 }

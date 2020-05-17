@@ -72,6 +72,21 @@
                            BorderColor="Black"          
                            ImageSource="btnLogin.png" ShowIcon="True"           
                            ImageAlignment="Top" />
+
+                    <buttons:SfButton  x:Name="SfBF"  Command="{Binding LoginFacebookCommand}" 
+                            CornerRadius="20" 
+                           IsEnabled="{Binding IsEnabled}" 
+                           BackgroundColor="#4768AD"
+                           HeightRequest="42"    
+                           Text="{i18n:Translate LoginFacebook}"
+                           TextColor="#FFFFFF"
+                           HorizontalTextAlignment="Center"
+                           BorderColor="Black"          
+                           ImageSource="ic_fb.png" 
+                           ShowIcon="True"           
+                           ImageAlignment="Start" />
+                    
+
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">

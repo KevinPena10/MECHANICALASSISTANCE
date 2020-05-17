@@ -360,4 +360,10 @@
   <data name="PriceValidation" xml:space="preserve">
     <value>Voer een geldige waarde in voor de prijs!</value>
   </data>
+  <data name="LoginFacebook" xml:space="preserve">
+    <value>Aanmelden met Facebook</value>
+  </data>
+  <data name="ChangePhotoNoAppUser" xml:space="preserve">
+    <value>Gebruikers die door sociale netwerken zijn gemaakt, moeten de foto of het wachtwoord op het sociale netwerk wijzigen.</value>
+  </data>
 </root>

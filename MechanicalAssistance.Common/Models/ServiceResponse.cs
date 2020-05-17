@@ -15,7 +15,7 @@ namespace MechanicalAssistance.Common.Models
 
         public string LogoPath { get; set; }
 
-        public string LogoFullPath => string.IsNullOrEmpty(LogoPath) ? "https://mechanicalassistanceweb.azurewebsites.net/images/noimage.png" : $"https://mechanicalassistanceweb.azurewebsites.net{LogoPath.Substring(1)}";
+        public string LogoFullPath => string.IsNullOrEmpty(LogoPath) ? "https://mechanicalassistancewebk.azurewebsites.net/images/noimage.png" : $"https://mechanicalassistancewebk.azurewebsites.net{LogoPath.Substring(1)}";
 
         public UserResponse User { get; set; }
 

@@ -60,6 +60,7 @@
                         LeadingViewPosition="Inside" >
                         <Entry Grid.Row="1"
                         Grid.Column="1"
+                        IsEnabled="{Binding IsAppUser}"
                         FontAttributes="Bold"   
                         Keyboard="Text"
                         Placeholder="{i18n:Translate NamePlaceHolder}"
@@ -77,6 +78,7 @@
                          LeadingViewPosition="Inside" >
                         <Entry Grid.Row="2"
                          Grid.Column="1"
+                          IsEnabled="{Binding IsAppUser}"
                           Keyboard="Text"
                           FontAttributes="Bold"   
                           Placeholder="{i18n:Translate LastNamePlaceHolder}"

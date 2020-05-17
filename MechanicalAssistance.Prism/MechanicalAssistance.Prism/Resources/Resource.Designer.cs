@@ -142,6 +142,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Users created by social networks, must change the photo or password on the social network..
+        /// </summary>
+        public static string ChangePhotoNoAppUser {
+            get {
+                return ResourceManager.GetString("ChangePhotoNoAppUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check your internet connection.
         /// </summary>
         public static string ConnectionError {
@@ -453,6 +462,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string Loading {
             get {
                 return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login with Facebook.
+        /// </summary>
+        public static string LoginFacebook {
+            get {
+                return ResourceManager.GetString("LoginFacebook", resourceCulture);
             }
         }
         

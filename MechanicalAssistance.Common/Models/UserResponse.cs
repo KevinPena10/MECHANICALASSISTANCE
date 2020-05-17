@@ -13,8 +13,11 @@ namespace MechanicalAssistance.Common.Models
         public string Address { get; set; }
         public string PicturePath { get; set; }
         public UserType UserType { get; set; }
+        public LoginType LoginType { get; set; }
         public string FullName => $"{FirstName} {LastName}";
         public string FullNameWithDocument => $"{FirstName} {LastName} - {Document}";
-        public string PictureFullPath => string.IsNullOrEmpty(PicturePath) ? "https://mechanicalassistanceweb.azurewebsites.net/images/noimage.png" : $"https://mechanicalassistanceweb.azurewebsites.net{PicturePath.Substring(1)}";
+        public string PictureFullPath => string.IsNullOrEmpty(PicturePath) 
+            ? "https://mechanicalassistancewebk.azurewebsites.net/images/noimage.png" 
+            : LoginType == LoginType.MechanicalAssistance ? $"https://mechanicalassistancewebk.azurewebsites.net{PicturePath.Substring(1)}" : PicturePath;
     }
 }

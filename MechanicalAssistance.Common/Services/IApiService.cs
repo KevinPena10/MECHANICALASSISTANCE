@@ -7,6 +7,8 @@ namespace MechanicalAssistance.Common.Services
     {
         Task<bool> CheckConnectionAsync(string url);
         Task<Response> GetTokenAsync(string urlBase, string servicePrefix, string controller, TokenRequest request);
+        Task<Response> GetTokenAsync(string urlBase, string servicePrefix, string controller, FacebookProfile request);
+
 
         Task<Response> RecoverPasswordAsync(string urlBase, string servicePrefix, string controller, EmailRequest emailRequest);
 

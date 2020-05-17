@@ -13,7 +13,7 @@ namespace MechanicalAssistance.Common.Models
         public double Price { get; set; }
         public string Photo { get; set; }
 
-        public string LogoFullPath => string.IsNullOrEmpty(Photo) ? "https://mechanicalassistanceweb.azurewebsites.net/images/noimage.png" : $"https://mechanicalassistanceweb.azurewebsites.net{Photo.Substring(1)}";
+        public string LogoFullPath => string.IsNullOrEmpty(Photo) ? "https://mechanicalassistancewebk.azurewebsites.net/images/noimage.png" : $"https://mechanicalassistancewebk.azurewebsites.net{Photo.Substring(1)}";
         public ServiceResponse Service { get; set; }
         public ProductBrandResponse ProductBrand { get; set; }
     }

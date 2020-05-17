@@ -50,7 +50,8 @@ namespace MechanicalAssistance.Web.Data
                     UserName = email,
                     PhoneNumber = phone,
                     Address = address,
-                    UserType = userType
+                    UserType = userType,
+                    LoginType = LoginType.MechanicalAssistance
                 };
 
                 await _userHelper.AddUserAsync(user, "123456");

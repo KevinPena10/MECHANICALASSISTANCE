@@ -8,8 +8,8 @@
         <ResourceDictionary>
 
             <!-- Parameters -->
-            <x:String x:Key="UrlAPI">https://mechanicalassistanceweb.azurewebsites.net</x:String>
-            <x:String x:Key="UrlNoImage">https://mechanicalassistanceweb.azurewebsites.net/images/noimage.png</x:String>
+            <x:String x:Key="UrlAPI">https://mechanicalassistancewebk.azurewebsites.net</x:String>
+            <x:String x:Key="UrlNoImage">https://mechanicalassistancewebk.azurewebsites.net/images/noimage.png</x:String>
 
 
         </ResourceDictionary>
