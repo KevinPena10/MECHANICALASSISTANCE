@@ -1,5 +1,7 @@
-﻿using MechanicalAssistance.Common.Models;
+﻿using MechanicalAssistance.Common.Helpers;
+using MechanicalAssistance.Common.Models;
 using MechanicalAssistance.Prism.Views;
+using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Navigation;
 
@@ -25,6 +27,8 @@ namespace MechanicalAssistance.Prism.ViewModels
             {
                 { "service", this }
             };
+
+            Settings.Service = JsonConvert.SerializeObject(this);
 
             await _navigationService.NavigateAsync(nameof(ServiceTabbedPage), parameters);
         }

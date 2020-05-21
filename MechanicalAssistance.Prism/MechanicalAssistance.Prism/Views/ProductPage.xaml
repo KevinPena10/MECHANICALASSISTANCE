@@ -20,7 +20,7 @@
                      AbsoluteLayout.LayoutFlags="All" 
                      Padding="10">
             <StackLayout Padding="10" >
-                <buttons:SfButton x:Name="SfButton"  Command="{Binding createCommand}" 
+                <buttons:SfButton x:Name="SfButton"  Command="{Binding CreateCommand}" 
                            CornerRadius="100"
                            IsVisible="{Binding IsVisible}" 
                            WidthRequest="55"  

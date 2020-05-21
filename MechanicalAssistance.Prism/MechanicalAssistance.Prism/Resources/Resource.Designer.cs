@@ -277,6 +277,24 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address:.
+        /// </summary>
+        public static string infoAddress {
+            get {
+                return ResourceManager.GetString("infoAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone:.
+        /// </summary>
+        public static string infoPhone {
+            get {
+                return ResourceManager.GetString("infoPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Address.
         /// </summary>
         public static string labelAddress {
@@ -759,6 +777,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string titleServiceDetails {
             get {
                 return ResourceManager.GetString("titleServiceDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request Service.
+        /// </summary>
+        public static string txtRequest {
+            get {
+                return ResourceManager.GetString("txtRequest", resourceCulture);
             }
         }
         

@@ -6,7 +6,6 @@ using MechanicalAssistance.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Navigation;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,7 +13,8 @@ namespace MechanicalAssistance.Prism.ViewModels
 {
     public class ProductPageViewModel : ViewModelBase
     {
-        public int ServiceId;
+        public int serviceId;
+        public string userEmail;
         private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
         private ServiceResponse _service;
@@ -34,10 +34,10 @@ namespace MechanicalAssistance.Prism.ViewModels
             Title = Languages.titleProducts;
             IsVisible = false;
             LoadProductsAsync();
-            LoadUser();
+          
         }
 
-        public DelegateCommand createCommand => _createCommand ?? (_createCommand = new DelegateCommand(RedirectNewProductAsync));
+        public DelegateCommand CreateCommand => _createCommand ?? (_createCommand = new DelegateCommand(RedirectNewProductAsync));
         public bool IsRunning
         {
             get => _isRunning;
@@ -73,8 +73,9 @@ namespace MechanicalAssistance.Prism.ViewModels
             base.OnNavigatedTo(parameters);
 
             _service = parameters.GetValue<ServiceResponse>("service");
-            ServiceId = _service.Id;
-
+            serviceId = _service.Id;
+            userEmail = _service.User.Email;
+            LoadUser();
         }
 
         public async void ReloadUser()
@@ -131,7 +132,7 @@ namespace MechanicalAssistance.Prism.ViewModels
 
                 foreach (var item in products)
                 {
-                    if (item.Service.Id == ServiceId)
+                    if (item.Service.Id == serviceId)
                     {
 
                         list.Add(new ProductResponse
@@ -166,7 +167,7 @@ namespace MechanicalAssistance.Prism.ViewModels
         {
             NavigationParameters parameters = new NavigationParameters
             {
-                { "newProduct", ServiceId }
+                { "newProduct", serviceId }
             };
 
             await _navigationService.NavigateAsync("NewProductPage", parameters);
@@ -180,7 +181,14 @@ namespace MechanicalAssistance.Prism.ViewModels
                 User = JsonConvert.DeserializeObject<UserResponse>(Settings.User);
                 if (User.UserType == UserType.Mechanic || User.UserType == UserType.Admin)
                 {
-                    IsVisible = true;
+                    if (User.Email == userEmail)
+                    {
+                        IsVisible = true;
+                    }
+                    else
+                    {
+                        IsVisible = false;
+                    }
                 }
                 else
                 {

@@ -21,7 +21,29 @@
     <span asp-validation-for="Address" class="text-danger"></span>
 </div>
 <div class="form-group">
+    <a href="https://www.coordenadas-gps.com/" target="_blank" data-toggle="tooltip" class="glyphicon glyphicon-info-sign" style="color:green; font-size:medium;" title="Click here to find the latitude of your address"></a> <label asp-for="latitude"  style="color:green;" class="control-label"></label>
+    <input asp-for="latitude"  onKeyPress="return onlyNumber(event)" class="form-control" />
+    <span asp-validation-for="latitude" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <a href="https://www.coordenadas-gps.com/" target="_blank" data-toggle="tooltip" class="glyphicon glyphicon-info-sign" style="color:green; font-size:medium;" title="Click here to find the length of your address"></a> <label asp-for="length"  style="color:green;" class="control-label"></label>
+    <input asp-for="length"  onKeyPress="return onlyNumber(event)" class="form-control" />
+    <span asp-validation-for="length" class="text-danger"></span>
+</div>
+
+<div class="form-group">
     <label asp-for="ServiceFile" class="control-label"></label>
     <input asp-for="ServiceFile" type="file" class="form-control" />
     <span asp-validation-for="ServiceFile" class="text-danger"></span>
 </div>
+
+<script type="text/javascript">
+   
+    function onlyNumber(e) {
+        var key = window.Event ? e.which : e.keyCode
+
+        return ((key >= 48 && key <= 57) || (key >= 45 && key <= 46)); 
+
+        
+    }
+</script>

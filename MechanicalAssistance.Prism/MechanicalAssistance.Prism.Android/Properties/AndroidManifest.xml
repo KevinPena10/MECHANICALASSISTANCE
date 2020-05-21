@@ -7,8 +7,14 @@
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  
-	<application android:label="MechanicalAssistance" android:icon="@mipmap/ic_launcher">
+
+  <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
+  <application android:label="MechanicalAssistance" android:icon="@mipmap/ic_launcher">
     <provider android:name="android.support.v4.content.FileProvider"
            android:authorities="${applicationId}.fileprovider"
            android:exported="false"
@@ -31,6 +37,10 @@
       </intent-filter>
     </activity>
 
-
+    <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+    <meta-data
+        android:name="com.google.android.maps.v2.API_KEY"
+        android:value="AIzaSyAtxvXVhbzV9OTwZh8UxVsW2A58WYf-Btc" />
+    
   </application>
 </manifest>

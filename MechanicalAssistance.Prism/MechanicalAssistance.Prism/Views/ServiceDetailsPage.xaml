@@ -2,10 +2,59 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" 
+             xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers" 
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MechanicalAssistance.Prism.Views.ServiceDetailsPage"
              BackgroundColor="SlateGray"
              IconImageSource="details"
              Title="{Binding Title}">
-  
+
+    <StackLayout>
+        <StackLayout Padding="6">
+        <cards:SfCardView ShadowColor="Transparent" BackgroundColor="LightGray" >
+            <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <ffimageloading:CachedImage Grid.Column="0"
+                                                        Aspect="AspectFit"
+                                                        Source="{Binding Detail.LogoPath }" 
+                                                        CacheDuration= "50"
+                                                        RetryCount= "3"
+                                                        RetryDelay= "600"
+                                                        WidthRequest="100"/>
+                    <StackLayout Grid.Column="1" VerticalOptions="Center" >
+                        <Label Text="{Binding Detail.Description}"
+                                       LineBreakMode="TailTruncation"
+                                       FontAttributes="Bold"
+                                       TextColor="black"
+                                       VerticalOptions="End" />
+                    </StackLayout>
+            </Grid>
+        </cards:SfCardView>
+             </StackLayout>
+        <StackLayout Padding="3">
+            <maps:Map x:Name="MyMap"
+                      HeightRequest="450"
+                  MapType="Street">
+            </maps:Map>
+
+        </StackLayout>
+        <StackLayout Padding="20">
+            <Button BackgroundColor="#76c5f0"
+                    CornerRadius="20"
+                    HeightRequest="40"
+                    Margin="10,0"
+                    Text="{i18n:Translate txtRequest}"
+                    TextColor="White"/>
+        </StackLayout>
+    </StackLayout>
+
+
 </ContentPage>

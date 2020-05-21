@@ -27,9 +27,17 @@ namespace MechanicalAssistance.Web.Data.Entities
         
         public DateTime Date { get; set; }
 
-        [MaxLength(500, ErrorMessage = "The {0} field can not have more than {1} characters.")]
+        [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         public string Address { get; set; }
+
+       
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        public float latitude { get; set; }
+
+ 
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        public float length { get; set; }
 
         [Display(Name = "Logo")]
         public string LogoPath { get; set; }

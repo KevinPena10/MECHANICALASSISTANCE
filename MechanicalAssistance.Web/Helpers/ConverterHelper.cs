@@ -60,6 +60,8 @@ namespace MechanicalAssistance.Web.Helpers
                 Date = model.Date,
                 Address = model.Address,
                 LogoPath = path,
+                latitude = model.latitude,
+                length = model.length,
                 User = model.User
 
             };
@@ -75,6 +77,8 @@ namespace MechanicalAssistance.Web.Helpers
                 Description = serviceEntity.Description,
                 Date = serviceEntity.Date,
                 Address = serviceEntity.Address,
+                latitude = serviceEntity.latitude,
+                length = serviceEntity.length,
                 LogoPath = serviceEntity.LogoPath
             };
         }
@@ -97,6 +101,7 @@ namespace MechanicalAssistance.Web.Helpers
                 PhoneNumber = user.PhoneNumber,
                 PicturePath = user.PicturePath,
                 UserType = user.UserType,
+
                 LoginType = user.LoginType
 
             };
@@ -112,6 +117,8 @@ namespace MechanicalAssistance.Web.Helpers
                 Date = serviceEntity.Date,
                 Address = serviceEntity.Address,
                 LogoPath = serviceEntity.LogoPath,
+                latitude = serviceEntity.latitude,
+                length = serviceEntity.length,
                 User = ToUserResponse(serviceEntity.User)
             };
         }

@@ -366,4 +366,13 @@
   <data name="ChangePhotoNoAppUser" xml:space="preserve">
     <value>Gebruikers die door sociale netwerken zijn gemaakt, moeten de foto of het wachtwoord op het sociale netwerk wijzigen.</value>
   </data>
+  <data name="infoAddress" xml:space="preserve">
+    <value>Adres:</value>
+  </data>
+  <data name="infoPhone" xml:space="preserve">
+    <value>Telefoon:</value>
+  </data>
+  <data name="txtRequest" xml:space="preserve">
+    <value>Service aanvragen</value>
+  </data>
 </root>

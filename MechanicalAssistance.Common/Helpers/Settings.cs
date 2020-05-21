@@ -8,6 +8,7 @@ namespace MechanicalAssistance.Common.Helpers
         private const string _user = "user";
         private const string _token = "token";
         private const string _isLogin = "isLogin";
+        private const string _service = "service";
         private static readonly string _stringDefault = string.Empty;
         private static readonly bool _boolDefault = false;
 
@@ -30,6 +31,12 @@ namespace MechanicalAssistance.Common.Helpers
         {
             get => AppSettings.GetValueOrDefault(_isLogin, _boolDefault);
             set => AppSettings.AddOrUpdateValue(_isLogin, value);
+        }
+
+        public static string Service
+        {
+            get => AppSettings.GetValueOrDefault(_service, _stringDefault);
+            set => AppSettings.AddOrUpdateValue(_service, value);
         }
     }
 }

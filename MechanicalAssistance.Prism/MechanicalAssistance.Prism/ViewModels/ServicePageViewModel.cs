@@ -90,6 +90,8 @@ namespace MechanicalAssistance.Prism.ViewModels
                     Date = s.Date,
                     Address = s.Address,
                     LogoPath = s.LogoPath,
+                    latitude = s.latitude,
+                    length = s.length,
                     User = s.User
                 }).ToList();
 

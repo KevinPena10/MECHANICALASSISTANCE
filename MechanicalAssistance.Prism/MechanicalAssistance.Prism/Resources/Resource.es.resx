@@ -366,4 +366,13 @@
   <data name="ChangePhotoNoAppUser" xml:space="preserve">
     <value>Los usuarios creados por redes sociales, deben cambiar la foto o contraseña en la red social.</value>
   </data>
+  <data name="infoAddress" xml:space="preserve">
+    <value>Dirección:</value>
+  </data>
+  <data name="infoPhone" xml:space="preserve">
+    <value>Teléfono:</value>
+  </data>
+  <data name="txtRequest" xml:space="preserve">
+    <value>Solicitar Servicio</value>
+  </data>
 </root>
