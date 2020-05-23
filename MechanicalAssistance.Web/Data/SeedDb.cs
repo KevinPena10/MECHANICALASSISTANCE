@@ -25,7 +25,7 @@ namespace MechanicalAssistance.Web.Data
             await CheckRolesAsync();
             await CheckProductBrandsAsync();
             await CheckUserAsync("1010", "Kevin", "Stiven", "kevin.stiven.pena@gmail.com", "3506342747", "Calle Luna Calle Sol", UserType.Admin);
-            await CheckUserAsync("2020", "Mauricio", "Hernandez", "mauro123@hotmail.com", "3506342747", "Calle Luna Calle Sol", UserType.Mechanic);
+            await CheckUserAsync("2020", "Mauricio", "Hernandez", "kmy151617@gmail.com", "3506342747", "Calle Luna Calle Sol", UserType.Mechanic);
             await CheckUserAsync("2020", "Sara", "Zapata", "sara1515@yopmail.com", "3226578909", "Carrera 77 #80-93", UserType.User);
         }
 

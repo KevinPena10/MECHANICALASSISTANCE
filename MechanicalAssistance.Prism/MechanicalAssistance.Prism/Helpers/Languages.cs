@@ -88,6 +88,9 @@ namespace MechanicalAssistance.Prism.Helpers
 
         public static string ChangePhotoNoAppUser => Resource.ChangePhotoNoAppUser;
 
+        public static string txtRequest => Resource.txtRequest;
+        public static string rol => Resource.rol;
 
+        public static string info => Resource.Info;
     }
 }

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers" xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms" xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MechanicalAssistance.Prism.Views.NewRequestServicePage"
+             BackgroundColor="SlateGray"
+             Title="{Binding Title}">
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All"
+                     Padding="21">
+
+            <StackLayout>
+                <StackLayout Padding="8"></StackLayout>
+                <ffimageloading:CachedImage Aspect="AspectFit"
+                                                Source="{Binding Image}" 
+                                                CacheDuration= "50"
+                                                HeightRequest="150"
+                                                Margin="5"
+                                                RetryCount= "3"
+                                                RetryDelay= "600">
+                    <ffimageloading:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeImageCommand}"/>
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                </ffimageloading:CachedImage>
+
+                <StackLayout Padding="3"></StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10" Padding="4"  VerticalOptions="CenterAndExpand">
+                    <Image Source="calendar" />
+                    <Label 
+                     Text="{i18n:Translate labelDateAndTime}"
+                     TextColor="Black"  FontAttributes="Bold"        
+                     VerticalOptions="Center"/>
+                    <Image Source="hour" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="4" Padding="7" HorizontalOptions="StartAndExpand">
+                    <inputLayout:SfTextInputLayout Hint="{i18n:Translate labelD}" ContainerBackgroundColor="White">
+                    <DatePicker x:Name="startDatePicker"
+                     TextColor="Black"
+                     WidthRequest="120"
+                     FontAttributes="Bold"
+                     Date="{Binding Date}"
+                     MinimumDate="{Binding todayDate}"
+                     MaximumDate="12/31/2025"
+                     Format="dd/MM/yyyy"/>
+                    </inputLayout:SfTextInputLayout>
+                    <Label 
+                     Text="-"
+                     TextColor="Black"  
+                     FontAttributes="Bold"        
+                     VerticalOptions="Center"/>
+
+                    <inputLayout:SfTextInputLayout Hint="{i18n:Translate LabelHour}" ContainerBackgroundColor="White">
+                     <TimePicker x:Name="timePicker" 
+                     Time="{Binding CurrentTime}"
+                     FontAttributes="Bold"
+                     TextColor="Black"
+                     Format="HH:mm"/>
+                    </inputLayout:SfTextInputLayout>
+                </StackLayout>
+
+                <inputLayout:SfTextInputLayout
+                         Hint="{i18n:Translate textObservation}"
+                         ContainerType="Filled"
+                         ContainerBackgroundColor="White"
+                         LeadingViewPosition="Inside" >
+                    <Editor Grid.Row="0"
+                        Grid.Column="1"
+                        Keyboard="Text"
+                        HeightRequest="160"
+                        Placeholder="{i18n:Translate PlaceHolderObservation}"
+                        Text="{Binding Request.Observation}">
+                    </Editor>
+                    <inputLayout:SfTextInputLayout.LeadingView>
+                        <Image Source="edit" />
+                    </inputLayout:SfTextInputLayout.LeadingView>
+                </inputLayout:SfTextInputLayout>
+            </StackLayout>
+            <StackLayout Padding="30" >
+                <buttons:SfButton x:Name="SfButton"  Command="{Binding RequestCommand}" 
+                          CornerRadius="100" 
+                           IsEnabled="{Binding IsEnabled}" 
+                           WidthRequest="20"  
+                           HeightRequest = "50"           
+                           BackgroundColor="#76c5f0"
+                           TextColor="White"
+                           FontAttributes="Bold"            
+                           HorizontalTextAlignment="Center"
+                           Text="{i18n:Translate txtSend}"
+                           ImageSource="arrow.png" 
+                           ShowIcon="True"           
+                           ImageAlignment="End" />
+            </StackLayout>
+
+        </StackLayout>
+
+       <!-- <busyindicator:SfBusyIndicator AnimationType="DoubleCircle" 
+                                       AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                	                   AbsoluteLayout.LayoutFlags="All"
+                	                   HorizontalOptions="Center"
+                	                   TextColor="Black"
+                	                   IsVisible="{Binding IsRunning}"
+                	                   Title="{i18n:Translate Loading}"
+                	                   VerticalOptions="Center"
+                	                   ViewBoxWidth="100"
+                	                   ViewBoxHeight="100" />-->
+    </AbsoluteLayout>
+
+</ContentPage>

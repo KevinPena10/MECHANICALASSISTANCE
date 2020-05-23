@@ -277,6 +277,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to information.
+        /// </summary>
+        public static string Info {
+            get {
+                return ResourceManager.GetString("Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Address:.
         /// </summary>
         public static string infoAddress {
@@ -340,6 +349,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date:.
+        /// </summary>
+        public static string labelD {
+            get {
+                return ResourceManager.GetString("labelD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date of publication:.
         /// </summary>
         public static string labelDate {
@@ -390,6 +408,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string labelFirstName {
             get {
                 return ResourceManager.GetString("labelFirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hour:.
+        /// </summary>
+        public static string LabelHour {
+            get {
+                return ResourceManager.GetString("LabelHour", resourceCulture);
             }
         }
         
@@ -646,6 +673,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enter the description for which you are making the request.
+        /// </summary>
+        public static string PlaceHolderObservation {
+            get {
+                return ResourceManager.GetString("PlaceHolderObservation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter  name of the product.
         /// </summary>
         public static string PNameValidation {
@@ -691,6 +727,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To request a service you must create an account with user role..
+        /// </summary>
+        public static string rol {
+            get {
+                return ResourceManager.GetString("rol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select a Product Brand.
         /// </summary>
         public static string SelectBrand {
@@ -718,6 +763,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Request description.
+        /// </summary>
+        public static string textObservation {
+            get {
+                return ResourceManager.GetString("textObservation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string TitleLogin {
@@ -736,7 +790,7 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create new product.
+        ///   Looks up a localized string similar to Add new product.
         /// </summary>
         public static string titleNewProduct {
             get {
@@ -786,6 +840,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string txtRequest {
             get {
                 return ResourceManager.GetString("txtRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send.
+        /// </summary>
+        public static string txtSend {
+            get {
+                return ResourceManager.GetString("txtSend", resourceCulture);
             }
         }
         

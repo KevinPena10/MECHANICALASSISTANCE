@@ -37,7 +37,7 @@ namespace MechanicalAssistance.Prism.ViewModels
             _navigationService = navigationService;
             _apiService = apiService;
             _filesHelper = filesHelper;
-            Image = App.Current.Resources["UrlNoImage"].ToString();
+            Image = App.Current.Resources["AddImage"].ToString();
             Product = new ProductRequest();
             LoadProductBrandsAsync();
         }

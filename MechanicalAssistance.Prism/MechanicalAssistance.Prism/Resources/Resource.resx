@@ -316,7 +316,7 @@
     <value>Products</value>
   </data>
   <data name="titleNewProduct" xml:space="preserve">
-    <value>Create new product</value>
+    <value>Add new product</value>
   </data>
   <data name="titleServiceDetails" xml:space="preserve">
     <value>Service Details </value>
@@ -374,5 +374,26 @@
   </data>
   <data name="txtRequest" xml:space="preserve">
     <value>Request Service</value>
+  </data>
+  <data name="textObservation" xml:space="preserve">
+    <value>Request description</value>
+  </data>
+  <data name="PlaceHolderObservation" xml:space="preserve">
+    <value>Enter the description for which you are making the request</value>
+  </data>
+  <data name="LabelHour" xml:space="preserve">
+    <value>Hour:</value>
+  </data>
+  <data name="labelD" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="txtSend" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>information</value>
+  </data>
+  <data name="rol" xml:space="preserve">
+    <value>To request a service you must create an account with user role.</value>
   </data>
 </root>

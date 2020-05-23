@@ -346,7 +346,7 @@
     <value>Seleccione una marca de producto</value>
   </data>
   <data name="titleNewProduct" xml:space="preserve">
-    <value>Crear nuevo producto</value>
+    <value>Agregar nuevo producto</value>
   </data>
   <data name="PNameValidation" xml:space="preserve">
     <value>Por favor, ingrese el nombre del producto</value>
@@ -374,5 +374,26 @@
   </data>
   <data name="txtRequest" xml:space="preserve">
     <value>Solicitar Servicio</value>
+  </data>
+  <data name="textObservation" xml:space="preserve">
+    <value>Descripción de la solicitud</value>
+  </data>
+  <data name="PlaceHolderObservation" xml:space="preserve">
+    <value>Ingrese la descripcion por la cual realiza la solicitud</value>
+  </data>
+  <data name="LabelHour" xml:space="preserve">
+    <value>Hora:</value>
+  </data>
+  <data name="labelD" xml:space="preserve">
+    <value>Fecha:</value>
+  </data>
+  <data name="txtSend" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="rol" xml:space="preserve">
+    <value>Para solicitar un servicio debe crear una cuenta con rol de usuario.</value>
   </data>
 </root>

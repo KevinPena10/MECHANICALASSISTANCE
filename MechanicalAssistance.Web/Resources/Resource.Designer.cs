@@ -264,6 +264,55 @@ namespace MechanicalAssistance.Web.Resources {
             }
         }
 
-        
+
+        public static string RequestMessage
+        {
+            get
+            {
+                return ResourceManager.GetString("RequestMessage", resourceCulture);
+            }
+        }
+
+        public static string subjectP
+        {
+            get
+            {
+                return ResourceManager.GetString("subjectP", resourceCulture);
+            }
+        }
+
+        public static string MessageF
+        {
+            get
+            {
+                return ResourceManager.GetString("MessageF", resourceCulture);
+            }
+        }
+
+        public static string MessageS
+        {
+            get
+            {
+                return ResourceManager.GetString("MessageS", resourceCulture);
+            }
+        }
+
+
+        public static string MessageT
+        {
+            get
+            {
+                return ResourceManager.GetString("MessageT", resourceCulture);
+            }
+        }
+
+        public static string MessaFo
+        {
+            get
+            {
+                return ResourceManager.GetString("MessaFo", resourceCulture);
+            }
+        }
+
     }
 }

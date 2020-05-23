@@ -171,4 +171,22 @@
   <data name="ProductMessage" xml:space="preserve">
     <value>The product was saved correctly </value>
   </data>
+  <data name="RequestMessage" xml:space="preserve">
+    <value>The service request has been created correctly and an email has been sent to the service manager, check for status. </value>
+  </data>
+  <data name="subjectP" xml:space="preserve">
+    <value>SERVICE REQUEST</value>
+  </data>
+  <data name="MessageF" xml:space="preserve">
+    <value>A request has been made to the service </value>
+  </data>
+  <data name="MessageS" xml:space="preserve">
+    <value>on the part of </value>
+  </data>
+  <data name="MessageT" xml:space="preserve">
+    <value>The status of this request is</value>
+  </data>
+  <data name="MessaFo" xml:space="preserve">
+    <value>We will contact you shortly to respond to this request.</value>
+  </data>
 </root>

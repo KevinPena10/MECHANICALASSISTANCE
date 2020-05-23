@@ -171,4 +171,22 @@
   <data name="ProductMessage" xml:space="preserve">
     <value>Het product is correct opgeslagen </value>
   </data>
+  <data name="RequestMessage" xml:space="preserve">
+    <value>De serviceaanvraag is correct gemaakt en er is een e-mail naar de servicemanager gestuurd, controleer het </value>
+  </data>
+  <data name="subjectP" xml:space="preserve">
+    <value>Serviceaanvraag </value>
+  </data>
+  <data name="MessageF" xml:space="preserve">
+    <value>Er is een verzoek ingediend bij de dienst </value>
+  </data>
+  <data name="MessageS" xml:space="preserve">
+    <value>van de kant van </value>
+  </data>
+  <data name="MessageT" xml:space="preserve">
+    <value>De status van dit verzoek is</value>
+  </data>
+  <data name="MessaFo" xml:space="preserve">
+    <value>We nemen binnenkort contact met je op om op dit verzoek te reageren.</value>
+  </data>
 </root>

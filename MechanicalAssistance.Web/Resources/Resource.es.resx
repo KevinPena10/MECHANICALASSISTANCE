@@ -171,4 +171,22 @@
   <data name="ProductMessage" xml:space="preserve">
     <value>El producto se guardó correctamente </value>
   </data>
+  <data name="RequestMessage" xml:space="preserve">
+    <value>La solicitud del servicio se ha creado correctamente y se ha enviado un correo electronico al responsable del servicio, verificar para saber el estatus.  </value>
+  </data>
+  <data name="subjectP" xml:space="preserve">
+    <value>SOLICITUD DE SERVICIO </value>
+  </data>
+  <data name="MessageF" xml:space="preserve">
+    <value>Se ha realizado una solicitud al servicio </value>
+  </data>
+  <data name="MessageS" xml:space="preserve">
+    <value>por parte de </value>
+  </data>
+  <data name="MessageT" xml:space="preserve">
+    <value>El estado de esta solicitud se encuentra </value>
+  </data>
+  <data name="MessaFo" xml:space="preserve">
+    <value>Nos podremos en contacto con usted para dar respuesta a la solicitud.</value>
+  </data>
 </root>

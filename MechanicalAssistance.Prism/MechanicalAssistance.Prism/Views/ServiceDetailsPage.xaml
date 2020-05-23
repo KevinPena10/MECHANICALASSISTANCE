@@ -6,6 +6,7 @@
              xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MechanicalAssistance.Prism.Views.ServiceDetailsPage"
              BackgroundColor="SlateGray"
@@ -47,12 +48,20 @@
 
         </StackLayout>
         <StackLayout Padding="20">
-            <Button BackgroundColor="#76c5f0"
-                    CornerRadius="20"
-                    HeightRequest="40"
-                    Margin="10,0"
-                    Text="{i18n:Translate txtRequest}"
-                    TextColor="White"/>
+
+            <buttons:SfButton x:Name="SfBxxx"  Command="{Binding RequestCommand}" 
+                          CornerRadius="100"  
+                           WidthRequest="20"  
+                           HeightRequest = "50"           
+                           BackgroundColor="#76c5f0"
+                           TextColor="White"
+                           FontAttributes="Bold"            
+                           HorizontalTextAlignment="Center"
+                           IsEnabled="{Binding IsEnabled}"
+                           Text="{i18n:Translate txtRequest}"
+                           ImageSource="arrow.png" 
+                           ShowIcon="True"           
+                           ImageAlignment="End" />
         </StackLayout>
     </StackLayout>
 
