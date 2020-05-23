@@ -24,6 +24,7 @@ namespace MechanicalAssistance.Common.Services
 
         Task<Response> NewProductAsync(string urlBase, string servicePrefix, string controller, ProductRequest productlRequest, string tokenType, string accessToken);
 
+        Task<Response> NewRequestAsync(string urlBase, string servicePrefix, string controller, RequestServiceRequest Request, string tokenType, string accessToken);
 
     }
 }

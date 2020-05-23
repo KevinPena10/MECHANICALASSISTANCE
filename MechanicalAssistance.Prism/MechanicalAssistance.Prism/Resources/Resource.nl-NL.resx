@@ -396,4 +396,7 @@
   <data name="rol" xml:space="preserve">
     <value>Als u een service wilt aanvragen, moet u een account aanmaken met een gebruikersro.</value>
   </data>
+  <data name="statusFirst" xml:space="preserve">
+    <value>In uitvoering</value>
+  </data>
 </root>

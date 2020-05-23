@@ -763,6 +763,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to In Process.
+        /// </summary>
+        public static string statusFirst {
+            get {
+                return ResourceManager.GetString("statusFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Request description.
         /// </summary>
         public static string textObservation {

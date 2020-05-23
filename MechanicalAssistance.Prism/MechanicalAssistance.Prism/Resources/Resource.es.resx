@@ -396,4 +396,7 @@
   <data name="rol" xml:space="preserve">
     <value>Para solicitar un servicio debe crear una cuenta con rol de usuario.</value>
   </data>
+  <data name="statusFirst" xml:space="preserve">
+    <value>En proceso</value>
+  </data>
 </root>

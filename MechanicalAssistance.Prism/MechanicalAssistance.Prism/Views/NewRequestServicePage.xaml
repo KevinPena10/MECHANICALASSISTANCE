@@ -45,7 +45,7 @@
                      WidthRequest="120"
                      FontAttributes="Bold"
                      Date="{Binding Date}"
-                     MinimumDate="{Binding todayDate}"
+                     IsEnabled="False"           
                      MaximumDate="12/31/2025"
                      Format="dd/MM/yyyy"/>
                     </inputLayout:SfTextInputLayout>
@@ -58,6 +58,7 @@
                     <inputLayout:SfTextInputLayout Hint="{i18n:Translate LabelHour}" ContainerBackgroundColor="White">
                      <TimePicker x:Name="timePicker" 
                      Time="{Binding CurrentTime}"
+                     IsEnabled="False"   
                      FontAttributes="Bold"
                      TextColor="Black"
                      Format="HH:mm"/>
@@ -99,7 +100,7 @@
 
         </StackLayout>
 
-       <!-- <busyindicator:SfBusyIndicator AnimationType="DoubleCircle" 
+        <busyindicator:SfBusyIndicator AnimationType="DoubleCircle" 
                                        AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
                 	                   AbsoluteLayout.LayoutFlags="All"
                 	                   HorizontalOptions="Center"
@@ -108,7 +109,7 @@
                 	                   Title="{i18n:Translate Loading}"
                 	                   VerticalOptions="Center"
                 	                   ViewBoxWidth="100"
-                	                   ViewBoxHeight="100" />-->
+                	                   ViewBoxHeight="100" />
     </AbsoluteLayout>
 
 </ContentPage>

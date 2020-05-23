@@ -17,7 +17,7 @@ namespace MechanicalAssistance.Prism.ViewModels
 {
     public class NewProductPageViewModel : ViewModelBase
     {
-        public int ServiceId;
+        public int serviceId;
         private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
         private readonly IFilesHelper _filesHelper;
@@ -86,8 +86,8 @@ namespace MechanicalAssistance.Prism.ViewModels
          {
              base.OnNavigatedTo(parameters);
 
-            ServiceId = parameters.GetValue<int>("newProduct");
-            Product.ServiceId = ServiceId;
+            serviceId = parameters.GetValue<int>("newProduct");
+            Product.ServiceId = serviceId;
 
          }
 
@@ -201,7 +201,7 @@ namespace MechanicalAssistance.Prism.ViewModels
             }
 
             Product.Photo = imageArray;
-            Product.ServiceId = ServiceId;
+            Product.ServiceId = serviceId;
             Product.ProductBrandId = ProductBrand.Id;
             Product.CultureInfo = Languages.Culture;
 
