@@ -21,5 +21,8 @@ namespace MechanicalAssistance.Web.Helpers
 
         ProductResponse ToProductsResponse(ProductEntity productEntity);
         List<ProductResponse> ToProductsResponse(List<ProductEntity> productEntities);
+
+        RequestServiceResponse ToRequestServiceResponse(RequestServiceEntity requestServiceEntity);
+        List<RequestServiceResponse> ToRequestServiceResponse(List<RequestServiceEntity> requestServiceEntities);
     }
 }

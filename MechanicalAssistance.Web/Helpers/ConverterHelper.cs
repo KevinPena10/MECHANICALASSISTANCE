@@ -134,6 +134,36 @@ namespace MechanicalAssistance.Web.Helpers
             return list;
         }
 
+
+        public RequestServiceResponse ToRequestServiceResponse(RequestServiceEntity requestServiceEntity)
+        {
+            return new RequestServiceResponse
+            {
+                Id = requestServiceEntity.Id,
+                DateAndTime = requestServiceEntity.DateAndTime,
+                Photo = requestServiceEntity.RequestPhoto,
+                Observation = requestServiceEntity.Observation,
+                Status = requestServiceEntity.Status,
+                Service = ToServiceResponseTwo(requestServiceEntity.Service),
+                User = ToUserResponse(requestServiceEntity.User)
+            };
+        }
+
+
+
+        public List<RequestServiceResponse> ToRequestServiceResponse(List<RequestServiceEntity> requestServiceEntities)
+        {
+            List<RequestServiceResponse> list = new List<RequestServiceResponse>();
+            foreach (RequestServiceEntity requestServiceEntity in requestServiceEntities)
+            {
+                list.Add(ToRequestServiceResponse(requestServiceEntity));
+            }
+
+            return list;
+        }
+
+
+
         public ProductResponse ToProductsResponse(ProductEntity productEntity)
         {
             return new ProductResponse

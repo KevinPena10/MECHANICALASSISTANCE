@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MimeKit;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
@@ -97,7 +98,7 @@ namespace MechanicalAssistance.Web.Controllers.API
             list.Add(new MailboxAddress(serviceEntity.User.Email));
             
             _mailHelper.SendMultipleEmails(list, Resource.subjectP, $"<h1>{Resource.subjectP +" "+ serviceEntity.ServiceName }</h1>" +
-               $"{Resource.MessageF+" "+serviceEntity.ServiceName+" "+Resource.MessageS+" "+userEntity.FullName+". "+ Resource.MessageT + "<strong>"+RequestService.Status + "</strong>. "+Resource.MessaFo + " "}<img src=\"https://mechanicalassistancewebk.azurewebsites.net/images/ErrorNotFound.png\" >");
+               $"{Resource.MessageF+" "+serviceEntity.ServiceName+" "+Resource.MessageS+" "+userEntity.FullName+". "+ Resource.MessageT + "<strong>"+RequestService.Status + "</strong>. "+Resource.MessaFo + " "}<br/><br/><img src=\"https://mechanicalassistancewebk.azurewebsites.net/images/ErrorNotFound.png\" >");
 
             return Ok(new Response
             {
@@ -107,6 +108,106 @@ namespace MechanicalAssistance.Web.Controllers.API
 
         }
 
+
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpPut]
+        public async Task<IActionResult> PutRequest([FromBody] RequestServiceRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            CultureInfo cultureInfo = new CultureInfo(request.CultureInfo);
+            Resource.Culture = cultureInfo;
+
+            MechanicalServiceEntity serviceEntity = await _dataContext.Services.Include(u => u.User).FirstOrDefaultAsync(s => s.Id == request.ServiceId);
+
+            if (serviceEntity == null)
+            {
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = Resource.ServiceValidation
+                });
+            }
+
+
+            RequestServiceEntity requestEntity = await _dataContext.RequestServices.Include(u => u.User).Include(s => s.Service).FirstOrDefaultAsync(r => r.Id == request.Id);
+            if (requestEntity == null)
+            {
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = Resource.requestValidator
+                });
+            }
+
+            string picturePath = string.Empty;
+            if (request.Photo != null && request.Photo.Length > 0)
+            {
+                picturePath = _imageHelper.UploadImage(request.Photo, "Request");
+            }
+
+            requestEntity.DateAndTime =  DateTime.Now;
+            requestEntity.RequestPhoto = picturePath;
+            requestEntity.Observation = request.Observation;
+            requestEntity.Status = request.Status;
+
+
+           _dataContext.RequestServices.Update(requestEntity);
+            await _dataContext.SaveChangesAsync();
+
+            InternetAddressList list = new InternetAddressList();
+            list.Add(new MailboxAddress(requestEntity.User.Email));
+            list.Add(new MailboxAddress(serviceEntity.User.Email));
+
+
+            if(Resource.StatusA == request.Status)
+            {
+                _mailHelper.SendMultipleEmails(list, Resource.subjectRe, $"<h1>{Resource.subjectR + " " + serviceEntity.ServiceName }</h1>" +
+               $"{requestEntity.User.FullName+" "+ Resource.MessaR + "<strong>" + requestEntity.Status+ "</strong>" + ". "+ Resource.MessaS + " "+ serviceEntity.User.FullName +" "+ Resource.MessaT+" "+serviceEntity.User.PhoneNumber +". "}<br/><br/><img src=\"https://mechanicalassistancewebk.azurewebsites.net/images/ErrorNotFound.png\" >");
+            }
+            else
+            {
+
+                _mailHelper.SendMultipleEmails(list, Resource.subjectRe, $"<h1>{Resource.subjectR + " " + serviceEntity.ServiceName }</h1>" +
+              $"{requestEntity.User.FullName + " " + Resource.MessaR + "<strong>" + requestEntity.Status + "</strong>" + ". " +Resource.MessaF } <br/> <img src=\"https://mechanicalassistancewebk.azurewebsites.net/images/ErrorNotFound.png\" >");
+            } 
+
+
+            return Ok(new Response
+            {
+                IsSuccess = true,
+                Message = Resource.RequestMessageResponse
+            });
+        }
+
+
+
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpGet]
+        public async Task<IActionResult> GetRequestService()
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = "Bad request",
+                    Result = ModelState
+                });
+            }
+
+            List<RequestServiceEntity> Requestservice = await _dataContext.RequestServices.
+                                       Include(u => u.User).
+                                       Include(s => s.Service).
+                                       ToListAsync();
+
+            return Ok(_converterHelper.ToRequestServiceResponse(Requestservice));
+        }
 
     }
 }

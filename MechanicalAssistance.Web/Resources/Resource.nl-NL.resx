@@ -189,4 +189,34 @@
   <data name="MessaFo" xml:space="preserve">
     <value>We nemen binnenkort contact met je op om op dit verzoek te reageren.</value>
   </data>
+  <data name="requestValidator" xml:space="preserve">
+    <value>Er is geen serviceverzoek gevonden met deze Id</value>
+  </data>
+  <data name="RequestMessageResponse" xml:space="preserve">
+    <value>De status van het verzoek voor deze service is bijgewerkt. Er is een e-mail verzonden met de statusinformatie.!</value>
+  </data>
+  <data name="StatusA" xml:space="preserve">
+    <value>Geaccepteerd</value>
+  </data>
+  <data name="StatusB" xml:space="preserve">
+    <value>Afgewezen</value>
+  </data>
+  <data name="subjectR" xml:space="preserve">
+    <value>ANTWOORD OP HET VERZOEK OM </value>
+  </data>
+  <data name="MessaR" xml:space="preserve">
+    <value>bedankt voor het wachten, de gevraagde service was!</value>
+  </data>
+  <data name="MessaS" xml:space="preserve">
+    <value>De monteur</value>
+  </data>
+  <data name="MessaT" xml:space="preserve">
+    <value>neemt binnenkort contact met u op. Of als u wilt, kunt u het nummer bellen</value>
+  </data>
+  <data name="MessaF" xml:space="preserve">
+    <value>Omdat de service momenteel overbelast is, kunt u proberen het verzoek later te doen.</value>
+  </data>
+  <data name="subjectRe" xml:space="preserve">
+    <value>REACTIE OP HET VERZOEK</value>
+  </data>
 </root>

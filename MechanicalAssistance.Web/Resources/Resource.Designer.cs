@@ -314,5 +314,89 @@ namespace MechanicalAssistance.Web.Resources {
             }
         }
 
+
+        public static string requestValidator
+        {
+            get
+            {
+                return ResourceManager.GetString("requestValidator", resourceCulture);
+            }
+        }
+
+       
+
+        public static string RequestMessageResponse
+        {
+            get
+            {
+                return ResourceManager.GetString("RequestMessageResponse", resourceCulture);
+            }
+        }
+
+        public static string StatusA
+        {
+            get
+            {
+                return ResourceManager.GetString("StatusA", resourceCulture);
+            }
+        }
+
+        public static string StatusB
+        {
+            get
+            {
+                return ResourceManager.GetString("StatusB", resourceCulture);
+            }
+        }
+
+
+        public static string subjectR
+        {
+            get
+            {
+                return ResourceManager.GetString("subjectR", resourceCulture);
+            }
+        }
+
+
+        public static string MessaR
+        {
+            get
+            {
+                return ResourceManager.GetString("MessaR", resourceCulture);
+            }
+        }
+
+        public static string MessaS
+        {
+            get
+            {
+                return ResourceManager.GetString("MessaS", resourceCulture);
+            }
+        }
+
+        public static string MessaT
+        {
+            get
+            {
+                return ResourceManager.GetString("MessaT", resourceCulture);
+            }
+        }
+
+        public static string MessaF
+        {
+            get
+            {
+                return ResourceManager.GetString("MessaF", resourceCulture);
+            }
+        }
+
+        public static string subjectRe
+        {
+            get
+            {
+                return ResourceManager.GetString("subjectRe", resourceCulture);
+            }
+        }
     }
 }

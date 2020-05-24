@@ -28,5 +28,6 @@ namespace MechanicalAssistance.Common.Models
 
         [Required]
         public string CultureInfo { get; set; }
+
     }
 }

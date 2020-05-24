@@ -189,4 +189,34 @@
   <data name="MessaFo" xml:space="preserve">
     <value>Nos podremos en contacto con usted para dar respuesta a la solicitud.</value>
   </data>
+  <data name="requestValidator" xml:space="preserve">
+    <value>¡No se encontró ninguna solicitud de servicio con esta Id</value>
+  </data>
+  <data name="RequestMessageResponse" xml:space="preserve">
+    <value>El estado de la solicitud para este servicio ha sido actualizado. Se ha enviado un correo electrónico con la actualización del estado.</value>
+  </data>
+  <data name="StatusA" xml:space="preserve">
+    <value>Aceptado</value>
+  </data>
+  <data name="StatusB" xml:space="preserve">
+    <value>Rechazada</value>
+  </data>
+  <data name="subjectR" xml:space="preserve">
+    <value>RESPUESTA A LA SOLICITUD DE </value>
+  </data>
+  <data name="MessaR" xml:space="preserve">
+    <value>gracias por  su espera, el servicio solicitado fue </value>
+  </data>
+  <data name="MessaS" xml:space="preserve">
+    <value>El mecánico</value>
+  </data>
+  <data name="MessaT" xml:space="preserve">
+    <value>se pondrá en contacto con usted en breve. O si lo desea, puede llamar al número</value>
+  </data>
+  <data name="MessaF" xml:space="preserve">
+    <value>Debido a que en el momento el servicio se encuentra saturado, si desea puede intentar realizar la solicitud más tarde.</value>
+  </data>
+  <data name="subjectRe" xml:space="preserve">
+    <value>RESPUESTA A LA SOLICITUD</value>
+  </data>
 </root>

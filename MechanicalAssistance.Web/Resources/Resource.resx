@@ -189,4 +189,34 @@
   <data name="MessaFo" xml:space="preserve">
     <value>We will contact you shortly to respond to this request.</value>
   </data>
+  <data name="requestValidator" xml:space="preserve">
+    <value>No service request was found with this  Id</value>
+  </data>
+  <data name="RequestMessageResponse" xml:space="preserve">
+    <value>The status of the request for this service has been updated. An email has been sent with the status information.</value>
+  </data>
+  <data name="StatusA" xml:space="preserve">
+    <value>Accepted</value>
+  </data>
+  <data name="StatusB" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="subjectR" xml:space="preserve">
+    <value>RESPONSE TO THE REQUEST FOR </value>
+  </data>
+  <data name="MessaR" xml:space="preserve">
+    <value>thank you for waiting, the requested service was </value>
+  </data>
+  <data name="MessaS" xml:space="preserve">
+    <value>The mechanic</value>
+  </data>
+  <data name="MessaT" xml:space="preserve">
+    <value>will contact you shortly. Or if you wish you can call the number </value>
+  </data>
+  <data name="MessaF" xml:space="preserve">
+    <value>Since the service is currently overloaded, you can try to make the request later if you wish.</value>
+  </data>
+  <data name="subjectRe" xml:space="preserve">
+    <value>RESPONSE TO THE REQUEST</value>
+  </data>
 </root>
