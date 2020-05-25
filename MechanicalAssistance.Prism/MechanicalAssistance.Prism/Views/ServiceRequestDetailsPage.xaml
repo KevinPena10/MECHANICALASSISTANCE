@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" 
+             xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms" 
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms" 
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms" 
+             xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers" 
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MechanicalAssistance.Prism.Views.ServiceRequestDetailsPage"
+             BackgroundColor="SlateGray"
+             Title="{Binding Title}">
+
+    <AbsoluteLayout>
+        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All" 
+                     Padding="10">
+            <ScrollView>
+                <StackLayout Padding="12">
+                    <StackLayout Padding="6"></StackLayout>
+                    <cards:SfCardView ShadowColor="Transparent"  HeightRequest="630" BackgroundColor="LightGray">
+                        <Grid >
+                            <StackLayout VerticalOptions="Center"   Grid.Row="0" >
+                                <StackLayout Padding="8"></StackLayout>
+                                <Label Text="{Binding  RequestR.Service.ServiceName}" 
+                                               FontAttributes="Bold"
+                                               FontSize="Title"
+                                               TextColor="black"
+                                               LineBreakMode="TailTruncation" 
+                                               HorizontalOptions="CenterAndExpand"/>
+
+                                <ffimageloading:CachedImage x:Name="Picturee" 
+                                                Aspect="AspectFit"
+                                                Source="{Binding RequestR.photoPath}" 
+                                                CacheDuration= "50"
+                                                HeightRequest="180"
+                                                WidthRequest="130">
+
+                                </ffimageloading:CachedImage>
+
+                                <StackLayout Padding="20" >
+                                    <inputLayout:SfTextInputLayout
+                                        Hint="{i18n:Translate textObservation}"
+                                        ContainerType="Filled"
+                                        ContainerBackgroundColor="WhiteSmoke"
+                                        LeadingViewPosition="Inside" >
+                                        <Editor Grid.Row="0"      
+                                        Grid.Column="1"
+                                        FontAttributes="Bold"
+                                        Keyboard="Text"
+                                        HeightRequest="120"
+                                        IsReadOnly="True"   
+                                        Placeholder="{i18n:Translate PlaceHolderObservation}"
+                                        Text="{Binding RequestR.Observation}">
+                                        </Editor>
+                                        <inputLayout:SfTextInputLayout.LeadingView>
+                                         <Image Source="it" />
+                                        </inputLayout:SfTextInputLayout.LeadingView>
+                                    </inputLayout:SfTextInputLayout>
+                                    <Label Text="{i18n:Translate LabelDateT}"
+                                        LineBreakMode="TailTruncation"
+                                        FontSize="Subtitle"
+                                        FontAttributes="Bold"
+                                        TextColor="black"
+                                        VerticalOptions="End" />
+                                    <Label Text="{Binding RequestR.DateAndTime }"
+                                        LineBreakMode="TailTruncation"
+                                        FontSize="Body" 
+                                        TextColor="black"
+                                        VerticalOptions="End" />
+
+                                    <StackLayout  Orientation="Horizontal"  VerticalOptions="StartAndExpand">
+                                        <Label Text="{i18n:Translate LabelRequestName}"
+                                        LineBreakMode="TailTruncation"
+                                        FontSize="Subtitle"
+                                        FontAttributes="Bold"      
+                                        TextColor="black"
+                                        VerticalOptions="End" />
+                                        <Label Text="{Binding RequestR.User.FullName}"
+                                        LineBreakMode="TailTruncation"
+                                        FontSize="Body" 
+                                        TextColor="black"
+                                        VerticalOptions="End" />
+                                    </StackLayout>
+                                    <StackLayout  Orientation="Horizontal"  VerticalOptions="StartAndExpand">
+                                        <Label Text="{i18n:Translate infoPhone}"
+                                        LineBreakMode="TailTruncation"
+                                        FontSize="Subtitle"
+                                        FontAttributes="Bold"
+                                        TextColor="black"
+                                        VerticalOptions="End" />
+                                        <Label Text="{Binding RequestR.User.PhoneNumber}"
+                                        LineBreakMode="TailTruncation"
+                                        FontSize="Body" 
+                                        TextColor="black"
+                                        VerticalOptions="End" />
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <StackLayout Padding="3"></StackLayout>
+                                    <buttons:SfButton x:Name="SfButtonAc"  Command="{Binding Acceptcommand}" 
+                                                   CornerRadius="50" 
+                                                   IsEnabled="{Binding IsEnabled}" 
+                                                   WidthRequest="160"  
+                                                   HeightRequest = "50"           
+                                                    BackgroundColor="#76c5f0"
+                                                   TextColor="Black"
+                                                   BorderColor="Black"
+                                                   BorderWidth="1"
+                                                   FontAttributes="Bold"            
+                                                   HorizontalTextAlignment="Center"
+                                                   Text="{i18n:Translate btnAcept}"
+                                                   ImageSource="A.png" 
+                                                   ShowIcon="True"           
+                                                   ImageAlignment="Start" />
+                                    <buttons:SfButton x:Name="SfButtonR"  Command="{Binding RejectCommand}" 
+                                                   CornerRadius="50" 
+                                                   IsEnabled="{Binding IsEnabled}" 
+                                                   WidthRequest="160"  
+                                                   HeightRequest = "50"           
+                                                   BackgroundColor="#76c5f0"
+                                                   TextColor="Black"
+                                                   BorderColor="Black"
+                                                   BorderWidth="1"
+                                                   FontAttributes="Bold"            
+                                                   HorizontalTextAlignment="Center"
+                                                   Text="{i18n:Translate Reject}"
+                                                   ImageSource="R.png" 
+                                                   ShowIcon="True"           
+                                                   ImageAlignment="End" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </cards:SfCardView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+        <busyindicator:SfBusyIndicator AnimationType="DoubleCircle" 
+                                       AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"
+                                       IsVisible="{Binding IsRunning}"
+                                       Title="{i18n:Translate Loading}"
+                                       VerticalOptions="Center"
+                                       ViewBoxWidth="80"
+                                       ViewBoxHeight="80" />
+    </AbsoluteLayout>
+</ContentPage>

@@ -198,8 +198,15 @@ namespace MechanicalAssistance.Web.Helpers
 
             return new ServiceResponse
             {
-                Id = Service.Id
-
+                Id = Service.Id,
+                ServiceName = Service.ServiceName,
+                Description = Service.Description,
+                Date = Service.Date,
+                Address = Service.Address,
+                LogoPath = Service.LogoPath,
+                latitude = Service.latitude,
+                length = Service.length,
+                User = ToUserResponse(Service.User)
             };
         }
 

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" 
+             xmlns:cards="clr-namespace:Syncfusion.XForms.Cards;assembly=Syncfusion.Cards.XForms" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MechanicalAssistance.Prism.Views.ServiceRequestsPage"
+             BackgroundColor="SlateGray"
+             xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers" 
+             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms" 
+             Title="{Binding Title}">
+
+    <ScrollView>
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All" 
+                     Padding="10">
+
+                <StackLayout Padding="4"></StackLayout>
+
+                <Label Text="{i18n:Translate LabelNoRequests}"  FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  FontSize="Subtitle"  IsVisible="{Binding IsVisible}"></Label>
+
+                <CollectionView ItemsSource="{Binding Requests}">
+
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="2"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <cards:SfCardView ShadowColor="Transparent" BackgroundColor="LightGray" HeightRequest="165" >
+                                <Grid >
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <ffimageloading:CachedImage Grid.Column="0"
+                                                        Aspect="AspectFit"
+                                                        Source="{Binding Service.LogoFullPath}" 
+                                                        CacheDuration= "50"
+                                                        RetryCount= "3"
+                                                        RetryDelay= "600"
+                                                        WidthRequest="120"/>
+                                    <StackLayout Grid.Column="1"
+                                         VerticalOptions="Center" >
+
+                                        <Label Text="{Binding Service.ServiceName}" 
+                                       FontAttributes="Bold"
+                                       FontSize="Subtitle"
+                                       TextColor="black"
+                                       LineBreakMode="TailTruncation" />
+                                        
+
+                                     <Label Text="{i18n:Translate LabelDateT}"
+                                     LineBreakMode="TailTruncation"
+                                     FontAttributes="Bold"
+                                     TextColor="black"
+                                     VerticalOptions="End" />
+                                    <Label Text="{Binding DateAndTime }"
+                                     LineBreakMode="TailTruncation"
+                                     FontAttributes="Italic"
+                                     TextColor="black"
+                                     VerticalOptions="End" />
+
+                                     <Label Text="{i18n:Translate LabelRequestName}"
+                                     LineBreakMode="TailTruncation"
+                                     FontAttributes="Bold"
+                                     TextColor="black"
+                                     VerticalOptions="End" />
+                                     <Label Text="{Binding User.FullName}"
+                                     LineBreakMode="TailTruncation"
+                                     FontAttributes="Bold"
+                                     TextColor="black"
+                                     VerticalOptions="End" />
+                                    </StackLayout>
+                                    
+                                    <Image Grid.Column="2" 
+                                   Source="ic_more_vert"/>
+                                </Grid>
+                            </cards:SfCardView>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+            <busyindicator:SfBusyIndicator AnimationType="DoubleCircle" 
+                                       AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
+                                       AbsoluteLayout.LayoutFlags="All"
+                                       HorizontalOptions="Center"
+                                       TextColor="Black"
+                                       IsVisible="{Binding IsRunning}"
+                                       Title="{i18n:Translate Loading}"
+                                       VerticalOptions="Center"
+                                       ViewBoxWidth="80"
+                                       ViewBoxHeight="80" />
+        </AbsoluteLayout>
+    </ScrollView>
+</ContentPage>

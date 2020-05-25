@@ -399,4 +399,31 @@
   <data name="statusFirst" xml:space="preserve">
     <value>In Process</value>
   </data>
+  <data name="titleRequest" xml:space="preserve">
+    <value>Service Requests </value>
+  </data>
+  <data name="LabelRequestName" xml:space="preserve">
+    <value>Requesting Name:</value>
+  </data>
+  <data name="LabelDateT" xml:space="preserve">
+    <value>Date Of Request:</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="btnAcept" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="statusAccept" xml:space="preserve">
+    <value>Accepted</value>
+  </data>
+  <data name="DetailsRequest" xml:space="preserve">
+    <value>Details Of The Request</value>
+  </data>
+  <data name="statusReject" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="LabelNoRequests" xml:space="preserve">
+    <value>You don't have any requests to review. </value>
+  </data>
 </root>

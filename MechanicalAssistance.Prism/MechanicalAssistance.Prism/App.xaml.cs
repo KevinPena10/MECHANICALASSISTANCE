@@ -45,6 +45,8 @@ namespace MechanicalAssistance.Prism
             containerRegistry.RegisterForNavigation<NewProductPage, NewProductPageViewModel>();
             containerRegistry.RegisterForNavigation<ServiceDetailsPage, ServiceDetailsPageViewModel>();
             containerRegistry.RegisterForNavigation<NewRequestServicePage, NewRequestServiceViewModel>();
+            containerRegistry.RegisterForNavigation<ServiceRequestsPage, ServiceRequestsPageViewModel>();
+            containerRegistry.RegisterForNavigation<ServiceRequestDetailsPage, ServiceRequestDetailsPageViewModel>();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace MechanicalAssistance.Prism.ViewModels
         private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
         private ServiceResponse _service;
-        private List<ProductResponse> _Products;
+        private List<ProductResponse> _products;
         private static ProductPageViewModel _instance;
         private UserResponse _user;
         private bool _isRunning;
@@ -59,8 +59,8 @@ namespace MechanicalAssistance.Prism.ViewModels
 
         public List<ProductResponse> Products
         {
-            get => _Products;
-            set => SetProperty(ref _Products, value);
+            get => _products;
+            set => SetProperty(ref _products, value);
         }
 
         public static ProductPageViewModel GetInstance()

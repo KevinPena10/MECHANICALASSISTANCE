@@ -1,4 +1,5 @@
-﻿using MechanicalAssistance.Common.Helpers;
+﻿using MechanicalAssistance.Common.Enums;
+using MechanicalAssistance.Common.Helpers;
 using MechanicalAssistance.Common.Models;
 using MechanicalAssistance.Common.Services;
 using MechanicalAssistance.Prism.Helpers;
@@ -99,11 +100,14 @@ namespace MechanicalAssistance.Prism.ViewModels
                 IsEnabledTwo = false;
                 User = JsonConvert.DeserializeObject<UserResponse>(Settings.User);
                 IsEnabled = true;
-                LoadMenus();
-              
-            }
-            else
-            {
+
+                if (User.UserType == UserType.Mechanic || User.UserType == UserType.Admin) {
+                    LoadMenusThree();
+                } else {
+                    LoadMenus();
+                }
+
+            } else {
                 IsEnabledTwo = true;
                 IsEnabled = false;
                 menuImage = "mechanicalImage.png";
@@ -121,12 +125,52 @@ namespace MechanicalAssistance.Prism.ViewModels
                     PageName = "ServicePage",
                     Title = Languages.ServiceMenu
                 },
-               
+
                 new Menu
-                { 
+                {
                     Icon = "modify" ,
                     PageName = "ModifyUserPage" ,
-                    Title = Languages.ModifyMenu 
+                    Title = Languages.ModifyMenu
+                },
+                new Menu
+                {
+                    Icon = "login",
+                    PageName = "LoginPage",
+                    Title = Settings.IsLogin ? Languages.LogoutMenu : Languages.LoginMenu
+                }
+            };
+
+            Menus = new ObservableCollection<MenuItemViewModel>(
+                menus.Select(m => new MenuItemViewModel(_navigationService)
+                {
+                    Icon = m.Icon,
+                    PageName = m.PageName,
+                    Title = m.Title
+                }).ToList());
+        }
+
+        private void LoadMenusThree()
+        {
+            List<Menu> menus = new List<Menu>
+            {
+                new Menu
+                {
+                    Icon = "gestures",
+                    PageName = "ServicePage",
+                    Title = Languages.ServiceMenu
+                },
+
+                 new Menu
+                {
+                    Icon = "it",
+                    PageName = "ServiceRequestsPage",
+                    Title = Languages.titleRequest
+                },
+                new Menu
+                {
+                    Icon = "modify" ,
+                    PageName = "ModifyUserPage" ,
+                    Title = Languages.ModifyMenu
                 },
                 new Menu
                 {

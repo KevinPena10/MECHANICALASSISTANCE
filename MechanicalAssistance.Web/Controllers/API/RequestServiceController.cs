@@ -144,11 +144,13 @@ namespace MechanicalAssistance.Web.Controllers.API
                 });
             }
 
-            string picturePath = string.Empty;
+            string picturePath = requestEntity.RequestPhoto;
             if (request.Photo != null && request.Photo.Length > 0)
             {
                 picturePath = _imageHelper.UploadImage(request.Photo, "Request");
             }
+
+
 
             requestEntity.DateAndTime =  DateTime.Now;
             requestEntity.RequestPhoto = picturePath;
@@ -204,6 +206,7 @@ namespace MechanicalAssistance.Web.Controllers.API
             List<RequestServiceEntity> Requestservice = await _dataContext.RequestServices.
                                        Include(u => u.User).
                                        Include(s => s.Service).
+                                       Include(s => s.Service.User).
                                        ToListAsync();
 
             return Ok(_converterHelper.ToRequestServiceResponse(Requestservice));

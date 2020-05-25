@@ -399,4 +399,31 @@
   <data name="statusFirst" xml:space="preserve">
     <value>In uitvoering</value>
   </data>
+  <data name="titleRequest" xml:space="preserve">
+    <value>Ondersteuningsaanvragen</value>
+  </data>
+  <data name="LabelRequestName" xml:space="preserve">
+    <value>Naam opvragen:</value>
+  </data>
+  <data name="LabelDateT" xml:space="preserve">
+    <value>Datum van aanvraag :</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Afwijzen</value>
+  </data>
+  <data name="btnAcept" xml:space="preserve">
+    <value>Ik ga akkoord</value>
+  </data>
+  <data name="statusAccept" xml:space="preserve">
+    <value>Geaccepteerd</value>
+  </data>
+  <data name="DetailsRequest" xml:space="preserve">
+    <value>Details van het verzoek!</value>
+  </data>
+  <data name="statusReject" xml:space="preserve">
+    <value>Afgewezen</value>
+  </data>
+  <data name="LabelNoRequests" xml:space="preserve">
+    <value>Je hebt geen verzoeken tot herziening. </value>
+  </data>
 </root>

@@ -97,6 +97,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accept.
+        /// </summary>
+        public static string btnAcept {
+            get {
+                return ResourceManager.GetString("btnAcept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Password.
         /// </summary>
         public static string btnChangePassword {
@@ -183,6 +192,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string DescriptionValidation {
             get {
                 return ResourceManager.GetString("DescriptionValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details Of The Request.
+        /// </summary>
+        public static string DetailsRequest {
+            get {
+                return ResourceManager.GetString("DetailsRequest", resourceCulture);
             }
         }
         
@@ -376,6 +394,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date Of Request:.
+        /// </summary>
+        public static string LabelDateT {
+            get {
+                return ResourceManager.GetString("LabelDateT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description:.
         /// </summary>
         public static string Labeldescription {
@@ -439,6 +466,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You don&apos;t have any requests to review. .
+        /// </summary>
+        public static string LabelNoRequests {
+            get {
+                return ResourceManager.GetString("LabelNoRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phone.
         /// </summary>
         public static string labelPhone {
@@ -471,6 +507,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string LabelProductName {
             get {
                 return ResourceManager.GetString("LabelProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requesting Name:.
+        /// </summary>
+        public static string LabelRequestName {
+            get {
+                return ResourceManager.GetString("LabelRequestName", resourceCulture);
             }
         }
         
@@ -727,6 +772,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reject.
+        /// </summary>
+        public static string Reject {
+            get {
+                return ResourceManager.GetString("Reject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To request a service you must create an account with user role..
         /// </summary>
         public static string rol {
@@ -763,11 +817,29 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accepted.
+        /// </summary>
+        public static string statusAccept {
+            get {
+                return ResourceManager.GetString("statusAccept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to In Process.
         /// </summary>
         public static string statusFirst {
             get {
                 return ResourceManager.GetString("statusFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rejected.
+        /// </summary>
+        public static string statusReject {
+            get {
+                return ResourceManager.GetString("statusReject", resourceCulture);
             }
         }
         
@@ -831,6 +903,15 @@ namespace MechanicalAssistance.Prism.Resources {
         public static string TitleRegister {
             get {
                 return ResourceManager.GetString("TitleRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Requests .
+        /// </summary>
+        public static string titleRequest {
+            get {
+                return ResourceManager.GetString("titleRequest", resourceCulture);
             }
         }
         

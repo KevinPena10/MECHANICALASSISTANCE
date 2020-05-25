@@ -33,6 +33,9 @@
     <Compile Update="Views\NewRequestServicePage.xaml.cs">
       <DependentUpon>NewRequestServicePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ServiceRequestsPage.xaml.cs">
+      <DependentUpon>ServiceRequestsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -73,7 +76,13 @@
     <EmbeddedResource Update="Views\ServicePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ServiceRequestDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ServiceTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ServiceRequestsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

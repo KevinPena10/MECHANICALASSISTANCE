@@ -96,5 +96,14 @@ namespace MechanicalAssistance.Prism.Helpers
         public static string PlaceHolderObservation => Resource.PlaceHolderObservation;
         public static string statusFirst => Resource.statusFirst;
 
+        public static string titleRequest => Resource.titleRequest;
+
+        public static string statusAccept => Resource.statusAccept;
+
+        public static string statusReject => Resource.statusReject;
+
+        public static string DetailsRequest => Resource.DetailsRequest;
+
+
     }
 }

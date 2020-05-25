@@ -399,4 +399,31 @@
   <data name="statusFirst" xml:space="preserve">
     <value>En proceso</value>
   </data>
+  <data name="titleRequest" xml:space="preserve">
+    <value>Solicitudes De Servicio</value>
+  </data>
+  <data name="LabelRequestName" xml:space="preserve">
+    <value>Nombre Solicitante:</value>
+  </data>
+  <data name="LabelDateT" xml:space="preserve">
+    <value>Fecha De Solicitud:</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Rechazar</value>
+  </data>
+  <data name="btnAcept" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="statusAccept" xml:space="preserve">
+    <value>Aceptado</value>
+  </data>
+  <data name="DetailsRequest" xml:space="preserve">
+    <value>Detalles De La Solicitud</value>
+  </data>
+  <data name="statusReject" xml:space="preserve">
+    <value>Rechazado</value>
+  </data>
+  <data name="LabelNoRequests" xml:space="preserve">
+    <value>No tienes ninguna solicitud que revisar. </value>
+  </data>
 </root>

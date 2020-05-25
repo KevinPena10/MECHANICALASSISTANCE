@@ -26,5 +26,7 @@ namespace MechanicalAssistance.Common.Services
 
         Task<Response> NewRequestAsync(string urlBase, string servicePrefix, string controller, RequestServiceRequest Request, string tokenType, string accessToken);
 
+        Task<Response> UpdateRequestAsync(string urlBase, string servicePrefix, string controller, RequestServiceRequest Request, string tokenType, string accessToken);
+
     }
 }

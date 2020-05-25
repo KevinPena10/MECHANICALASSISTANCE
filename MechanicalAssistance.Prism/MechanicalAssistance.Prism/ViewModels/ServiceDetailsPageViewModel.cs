@@ -16,7 +16,7 @@ namespace MechanicalAssistance.Prism.ViewModels
         private ServiceDetailResponse _detail;
         private DelegateCommand _requestPasswordCommand;
         private UserResponse _user;
-        private bool _isVisible;
+        private bool _isEnabled;
 
         public ServiceDetailsPageViewModel(INavigationService navigationService) : base(navigationService)
         {
@@ -36,8 +36,8 @@ namespace MechanicalAssistance.Prism.ViewModels
 
         public bool IsEnabled
         {
-            get => _isVisible;
-            set => SetProperty(ref _isVisible, value);
+            get => _isEnabled;
+            set => SetProperty(ref _isEnabled, value);
         }
 
         public UserResponse User

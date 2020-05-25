@@ -86,6 +86,7 @@
                 <buttons:SfButton x:Name="SfButton"  Command="{Binding RequestCommand}" 
                           CornerRadius="100" 
                            IsEnabled="{Binding IsEnabled}" 
+                           IsTabStop="{Binding IsEnabled}"
                            WidthRequest="20"  
                            HeightRequest = "50"           
                            BackgroundColor="#76c5f0"

@@ -37,6 +37,8 @@ namespace MechanicalAssistance.Prism.ViewModels
             CurrentTime = DateTime.Now.TimeOfDay;
             Date = DateTime.Now.Date;
             Request = new RequestServiceRequest();
+
+
         }
 
         public TimeSpan CurrentTime { get; set; }
@@ -112,8 +114,9 @@ namespace MechanicalAssistance.Prism.ViewModels
 
             TokenResponse token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
             Response response = await _apiService.NewRequestAsync(url, "/api", "/RequestService/NewRequest", Request, "bearer", token.Token);
+           
+            IsEnabled = false;
             IsRunning = false;
-            IsEnabled = true;
 
             if (!response.IsSuccess)
             {
