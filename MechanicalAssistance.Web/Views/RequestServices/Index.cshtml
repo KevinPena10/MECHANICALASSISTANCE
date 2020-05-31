@@ -1,0 +1,108 @@
+﻿@model IEnumerable<MechanicalAssistance.Web.Data.Entities.RequestServiceEntity>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<br />
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="background-color:dodgerblue; text-align:center; font-weight: bold; color:black; border-color:black;">
+                <h3 class="panel-title">Service requests</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-hover table-responsive table-striped" style="background-color:dodgerblue; text-align:center; font-weight: bold; color:black; border-color:black;" id="MyTable">
+                    <thead>
+                        <tr>
+                            <td style="border-spacing: 50px; border-collapse: separate">
+                                <center> @Html.DisplayNameFor(model => model.RequestPhoto)</center>
+                            </td>
+                            <th>
+                                <center>@Html.DisplayNameFor(model => model.DateAndTimeLocal)</center>
+                            </th>
+
+                            <th>
+                                <center>@Html.DisplayNameFor(model => model.Observation)</center>
+                            </th>
+
+                            <td>
+                                <center>@Html.DisplayNameFor(model => model.Status)</center>
+                            </td>
+
+                            <td>
+                                <center><label> Requester's name</label></center>
+                            </td>
+                            <td>
+                                <center><label> Requester's mail</label></center>
+                            </td>
+
+                            <td>
+                                <center><label>Service name requested</label></center>
+                            </td>
+                            <td>
+                                <center><label>Manager's name</label></center>
+                            </td>
+                            <td>
+                                <center><label>Manager's mail</label></center>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td style="padding-right: 110px;">
+                                @if (!string.IsNullOrEmpty(item.RequestPhoto))
+                                {
+                                    <img src="@Url.Content(item.RequestPhoto)" alt="Image" style="width:240px;height:240px;max-width: 240%; height: auto;" />
+                                }
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateAndTimeLocal)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Observation)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.User.FullName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.User.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Service.ServiceName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Service.User.FullName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Service.User.Email)
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#MyTable').DataTable();
+         
+        });
+    </script>
+}

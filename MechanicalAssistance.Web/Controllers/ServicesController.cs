@@ -155,6 +155,7 @@ namespace MechanicalAssistance.Web.Controllers
         {
     
             var model = await _context.Services
+               .Include(s => s.User)
                .Include(p => p.Products)
                .ThenInclude(p => p.ProductBrand)
                .FirstOrDefaultAsync(s => s.Id == id);

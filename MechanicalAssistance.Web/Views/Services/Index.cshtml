@@ -73,13 +73,16 @@
                             </td>
 
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" style="border-spacing:10px;"><i class="glyphicon glyphicon-pencil"></i></a>
-                                <br />
-                                <br />
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info"><i class="glyphicon glyphicon-align-justify"></i></a>
                                 <br />
                                 <br />
-                                <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="glyphicon glyphicon-trash"></i></button>
+                                @if (User.Identity.Name == item.User.Email || User.IsInRole("Admin"))
+                                {
+                                  <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" style="border-spacing:10px;"><i class="glyphicon glyphicon-pencil"></i></a>
+                                  <br />
+                                  <br />
+                                  <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="glyphicon glyphicon-trash"></i></button>
+                                }
                             </td>
                         </tr>
                         }

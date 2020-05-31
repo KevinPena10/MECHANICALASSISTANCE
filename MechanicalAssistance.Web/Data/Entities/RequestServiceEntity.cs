@@ -16,6 +16,11 @@ namespace MechanicalAssistance.Web.Data.Entities
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = false)]
         public DateTime DateAndTime { get; set; }
 
+        [DataType(DataType.DateTime)]
+        [Display(Name = "Date and Time")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = false)]
+        public DateTime DateAndTimeLocal => DateAndTime.AddHours(-5);
+
         [Display(Name = "Picture")]
         public string RequestPhoto { get; set; }
 
