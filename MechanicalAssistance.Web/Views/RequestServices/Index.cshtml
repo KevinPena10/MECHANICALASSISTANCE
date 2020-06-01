@@ -34,18 +34,12 @@
                             <td>
                                 <center><label> Requester's name</label></center>
                             </td>
-                            <td>
-                                <center><label> Requester's mail</label></center>
-                            </td>
 
                             <td>
                                 <center><label>Service name requested</label></center>
                             </td>
                             <td>
                                 <center><label>Manager's name</label></center>
-                            </td>
-                            <td>
-                                <center><label>Manager's mail</label></center>
                             </td>
                         </tr>
                     </thead>
@@ -73,17 +67,12 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.User.FullName)
                             </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.User.Email)
-                            </td>
+                  
                             <td>
                                 @Html.DisplayFor(modelItem => item.Service.ServiceName)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Service.User.FullName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Service.User.Email)
                             </td>
                         </tr>
                         }

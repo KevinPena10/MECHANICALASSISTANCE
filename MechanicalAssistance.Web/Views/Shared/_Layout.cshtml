@@ -41,8 +41,9 @@
 
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
-                        <li><a asp-area="" asp-controller="ProductBrands" asp-action="Index">ProductBrand</a></li>
+
                         <li><a asp-area="" asp-controller="RequestServices" asp-action="Index">Service Requests</a></li>
+                        <li><a asp-area="" asp-controller="ProductBrands" asp-action="Index">ProductBrand</a></li>
 
                     }
 

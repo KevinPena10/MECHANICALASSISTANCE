@@ -40,6 +40,7 @@
                             </th>
 
                             <th> <center><label>Number</label></center></th>
+                            <th> <center><label>Manager's Mail</label></center></th>
                             <th> <center><label>Actions</label></center></th>
                         </tr>
                     </thead>
@@ -71,6 +72,9 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.User.PhoneNumber)
                             </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.User.Email)
+                            </td>
 
                             <td>
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info"><i class="glyphicon glyphicon-align-justify"></i></a>
@@ -78,10 +82,10 @@
                                 <br />
                                 @if (User.Identity.Name == item.User.Email || User.IsInRole("Admin"))
                                 {
-                                  <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" style="border-spacing:10px;"><i class="glyphicon glyphicon-pencil"></i></a>
-                                  <br />
-                                  <br />
-                                  <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="glyphicon glyphicon-trash"></i></button>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary" style="border-spacing:10px;"><i class="glyphicon glyphicon-pencil"></i></a>
+                                    <br />
+                                    <br />
+                                    <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="glyphicon glyphicon-trash"></i></button>
                                 }
                             </td>
                         </tr>
