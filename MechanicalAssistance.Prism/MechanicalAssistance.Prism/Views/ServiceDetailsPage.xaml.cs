@@ -42,7 +42,9 @@ namespace MechanicalAssistance.Prism.Views
                 Address = _service.Address + " - " + _service.User.PhoneNumber,
                 Type = PinType.Generic,
                 Position = new Position(_service.latitude, _service.length)
+
             };
+
 
             MyMap.Pins.Add(pin);
           

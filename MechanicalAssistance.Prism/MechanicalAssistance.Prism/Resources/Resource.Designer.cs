@@ -187,6 +187,15 @@ namespace MechanicalAssistance.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Service description .
+        /// </summary>
+        public static string DescriptionS {
+            get {
+                return ResourceManager.GetString("DescriptionS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please enter the description of product.
         /// </summary>
         public static string DescriptionValidation {

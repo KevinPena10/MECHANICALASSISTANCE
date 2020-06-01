@@ -426,4 +426,7 @@
   <data name="LabelNoRequests" xml:space="preserve">
     <value>Je hebt geen verzoeken tot herziening. </value>
   </data>
+  <data name="DescriptionS" xml:space="preserve">
+    <value>Service omschrijving</value>
+  </data>
 </root>

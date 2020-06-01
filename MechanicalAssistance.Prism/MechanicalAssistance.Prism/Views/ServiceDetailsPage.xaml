@@ -7,6 +7,7 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:i18n="clr-namespace:MechanicalAssistance.Prism.Helpers" 
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MechanicalAssistance.Prism.Views.ServiceDetailsPage"
              BackgroundColor="SlateGray"
@@ -14,40 +15,35 @@
              Title="{Binding Title}">
 
     <StackLayout>
-        <StackLayout Padding="6">
-        <cards:SfCardView ShadowColor="Transparent" BackgroundColor="LightGray" >
-            <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
+        <StackLayout Padding="4">
 
-                    <ffimageloading:CachedImage Grid.Column="0"
-                                                        Aspect="AspectFit"
-                                                        Source="{Binding Detail.LogoPath }" 
-                                                        CacheDuration= "50"
-                                                        RetryCount= "3"
-                                                        RetryDelay= "600"
-                                                        WidthRequest="100"/>
-                    <StackLayout Grid.Column="1" VerticalOptions="Center" >
-                        <Label Text="{Binding Detail.Description}"
-                                       LineBreakMode="TailTruncation"
-                                       FontAttributes="Bold"
-                                       TextColor="black"
-                                       VerticalOptions="End" />
-                    </StackLayout>
-            </Grid>
-        </cards:SfCardView>
-             </StackLayout>
-        <StackLayout Padding="3">
-            <maps:Map x:Name="MyMap"
-                      HeightRequest="450"
-                  MapType="Street">
-            </maps:Map>
+            <StackLayout Grid.Column="1" VerticalOptions="Center" >
+                <inputLayout:SfTextInputLayout
+                     Hint="{i18n:Translate DescriptionS}"
+                     ContainerType="Filled"
+                     ContainerBackgroundColor="WhiteSmoke"
+                     LeadingViewPosition="Inside" >
+                    <Editor Grid.Row="0"      
+                      Grid.Column="1"
+                      FontAttributes="Bold"
+                      Keyboard="Text"
+                      HeightRequest="80"
+                      FontSize="Small"
+                      IsReadOnly="True"   
+                      Text="{Binding Detail.Description}">
+                    </Editor>
+                    <inputLayout:SfTextInputLayout.LeadingView>
+                        <Image Source="it" />
+                    </inputLayout:SfTextInputLayout.LeadingView>
+                </inputLayout:SfTextInputLayout>
+            </StackLayout>
 
         </StackLayout>
-        <StackLayout Padding="20">
+        <maps:Map x:Name="MyMap"
+                      HeightRequest="450"
+                  MapType="Street">
+        </maps:Map>
+            <StackLayout Padding="10">
 
             <buttons:SfButton x:Name="SfBxxx"  Command="{Binding RequestCommand}" 
                           CornerRadius="100"  

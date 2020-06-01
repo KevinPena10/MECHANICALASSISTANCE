@@ -426,4 +426,7 @@
   <data name="LabelNoRequests" xml:space="preserve">
     <value>No tienes ninguna solicitud que revisar. </value>
   </data>
+  <data name="DescriptionS" xml:space="preserve">
+    <value>Descripción del servicio</value>
+  </data>
 </root>
